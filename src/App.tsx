@@ -27,10 +27,12 @@ function App() {
 
   const handleBackgroundClick = useCallback(() => {
     setIsInspectorOpen(false)
+    setSelectedId(null)
   }, [])
 
   const handleCloseInspector = useCallback(() => {
     setIsInspectorOpen(false)
+    setSelectedId(null)
   }, [])
 
   return (
@@ -43,6 +45,7 @@ function App() {
               onSelectNode={handleSelectNode}
               onStatsChange={handleStatsChange}
               onBackgroundClick={handleBackgroundClick}
+              selectedId={selectedId}
             />
             {isInspectorOpen ? (
               <div className="inspector-float">
