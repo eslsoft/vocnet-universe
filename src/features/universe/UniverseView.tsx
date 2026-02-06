@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useCallback, useState } from "react"
+import { useEffect, useRef, useCallback, useState } from "react"
 import ForceGraph3D from "react-force-graph-3d"
 import type { ForceGraphMethods } from "react-force-graph-3d"
 import { UniverseSearch } from "./UniverseSearch"
@@ -32,27 +32,16 @@ export function UniverseView({
 
   const schema = masterData.schema
 
-  // Build all possible filter IDs from the data
-  const allFilterIds = useMemo(() => {
+  // Active filters — lazy initializer populates from loaded data
+  const [activeFilters, setActiveFilters] = useState<Set<string>>(() => {
     const set = new Set<string>()
     for (const n of masterData.nodes) set.add(`l${n.level}`)
     for (const l of masterData.links) set.add(l.type)
     return set
-  }, [masterData.nodes, masterData.links])
-
-  // Toggled-off filters (inverted set — empty means "all active")
-  const [disabledFilters, setDisabledFilters] = useState<Set<string>>(new Set())
-
-  // Derived active filters = allFilterIds minus disabled
-  const activeFilters = useMemo(() => {
-    if (disabledFilters.size === 0) return allFilterIds
-    const set = new Set(allFilterIds)
-    for (const id of disabledFilters) set.delete(id)
-    return set
-  }, [allFilterIds, disabledFilters])
+  })
 
   const toggleFilter = useCallback((id: string) => {
-    setDisabledFilters(prev => {
+    setActiveFilters(prev => {
       const next = new Set(prev)
       if (next.has(id)) next.delete(id); else next.add(id)
       return next

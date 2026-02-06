@@ -90,9 +90,9 @@ export function useNodeRenderer(
     const dist = distanceMap?.get(n.id)
     const stateKey = makeStateKey(n.id, selectedId, dist)
 
-    // Return cached group if visual state unchanged
+    // Return cached group if visual state unchanged AND still attached to scene
     const cached = cache.current.get(n.id)
-    if (cached && cached.stateKey === stateKey) return cached.group
+    if (cached && cached.stateKey === stateKey && cached.group.parent) return cached.group
 
     // Dispose old sprites before rebuilding
     if (cached) disposeSpriteTextures(cached.group)
