@@ -14,10 +14,11 @@ import "./universe.css"
 
 type UniverseViewProps = {
   masterData: UniverseGraphData
-  onSelectNode: (id: string) => void
+  onSelectNode: (id: string, isDoubleClick?: boolean) => void
   onStatsChange: (stats: { nodes: number; links: number }) => void
   onBackgroundClick: () => void
   selectedId: string | null
+  expandedIds: Set<string>
 }
 
 export function UniverseView({
@@ -26,6 +27,7 @@ export function UniverseView({
   onStatsChange,
   onBackgroundClick,
   selectedId,
+  expandedIds,
 }: UniverseViewProps) {
   const graphRef = useRef<ForceGraphMethods>(undefined)
   const zoomRef = useRef<HTMLSpanElement | null>(null)
@@ -35,7 +37,7 @@ export function UniverseView({
   // Active filters — lazy initializer populates from loaded data
   const [activeFilters, setActiveFilters] = useState<Set<string>>(() => {
     const set = new Set<string>()
-    for (const n of masterData.nodes) set.add(`l${n.level}`)
+    for (const n of masterData.nodes) if (n.level > 0) set.add(`l${n.level}`)
     for (const l of masterData.links) set.add(l.type)
     return set
   })
@@ -49,10 +51,10 @@ export function UniverseView({
   }, [])
 
   // Data layer
-  const { nodeMap, graphData, distanceMap } = useGraphData(masterData, selectedId, activeFilters)
+  const { nodeMap, graphData, distanceMap } = useGraphData(masterData, selectedId, activeFilters, expandedIds)
 
   // Force simulation
-  useForceConfig(graphRef, graphData, selectedId, nodeMap)
+  useForceConfig(graphRef, graphData, selectedId, nodeMap, masterData.groups)
 
   // Node rendering (cached)
   const nodeThreeObject = useNodeRenderer(schema, selectedId, distanceMap)
@@ -82,11 +84,11 @@ export function UniverseView({
   }, [nodeMap])
 
   useEffect(() => {
-    if (selectedId) {
+    if (selectedId && expandedIds.size <= 1) {
       const timer = setTimeout(() => performFocus(selectedId), 150)
       return () => clearTimeout(timer)
     }
-  }, [selectedId, performFocus])
+  }, [selectedId, expandedIds.size, performFocus])
 
   // Init camera controls
   useEffect(() => {
@@ -125,6 +127,8 @@ export function UniverseView({
         nodeThreeObject={nodeThreeObject}
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         onNodeClick={(node: any) => onSelectNode(node.id as string)}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        onNodeRightClick={(node: any) => onSelectNode(node.id as string, true)}
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         linkVisibility={(link: any) => activeFilters.has(link.type as string)}
         // eslint-disable-next-line @typescript-eslint/no-explicit-any

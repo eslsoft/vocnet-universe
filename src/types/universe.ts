@@ -42,6 +42,7 @@ export interface UniverseNode {
   val: number    // Size/Mass
   level: number  // 1=Galaxy, 2=Nebula, 3=Star, 4=Planet
   color?: string // Optional override
+  groupId?: string // Phase 2: Theme/Group association
 
   // Semantic Payload
   data?: {

@@ -99,13 +99,15 @@ export function useNodeRenderer(
 
     const baseRadius = Math.max(12, (n.val || 10) * 1.5)
     const radius = (isSelected && n.level <= 1) ? baseRadius * 0.6 : baseRadius
-    const color = resolveNodeColor(schema, n.level)
-
-    const mesh = new THREE.Mesh(SPHERE_GEO, getMaterial(color, 0.9))
-    mesh.scale.setScalar(radius)
+    const color = n.color || resolveNodeColor(schema, n.level)
 
     const group = new THREE.Group()
-    group.add(mesh)
+
+    if (n.level > 0) {
+      const mesh = new THREE.Mesh(SPHERE_GEO, getMaterial(color, 0.9))
+      mesh.scale.setScalar(radius)
+      group.add(mesh)
+    }
 
     if (isSelected) {
       const halo = new THREE.Mesh(HALO_GEO, getMaterial("#ffffff", 0.15))
@@ -117,10 +119,11 @@ export function useNodeRenderer(
       group.add(ring)
     }
 
-    if (isSelected || dist === 1 || (!selectedId && n.level <= 2)) {
-      const labelScale = (radius / 25 + 1.2) * (isSelected ? 1.1 : 1)
-      const label = createLabelSprite(n.label, labelScale, isSelected)
-      label.position.set(0, radius + 20, 0)
+    if (n.level === 0 || isSelected || dist === 1 || (!selectedId && n.level <= 2)) {
+      const isTheme = n.level === 0
+      const labelScale = isTheme ? 4 : (radius / 25 + 1.2) * (isSelected ? 1.1 : 1)
+      const label = createLabelSprite(n.label, labelScale, isSelected || isTheme)
+      label.position.set(0, isTheme ? 0 : radius + 20, 0)
       group.add(label)
     }
 

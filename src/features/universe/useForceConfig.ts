@@ -2,7 +2,7 @@
 import { useEffect } from "react"
 import * as d3 from "d3-force-3d"
 import type { ForceGraphMethods } from "react-force-graph-3d"
-import type { UniverseNode, UniverseLink, LinkSourceTarget } from "@/types/universe"
+import type { UniverseNode, UniverseLink, LinkSourceTarget, UniverseGroup } from "@/types/universe"
 import { linkId } from "./linkHelpers"
 
 export function useForceConfig(
@@ -10,6 +10,7 @@ export function useForceConfig(
   graphData: { nodes: UniverseNode[]; links: UniverseLink[] },
   selectedId: string | null,
   nodeMap: Map<string, UniverseNode>,
+  groups?: UniverseGroup[],
 ) {
   useEffect(() => {
     const fg = graphRef.current
@@ -18,6 +19,28 @@ export function useForceConfig(
     const timeoutId = setTimeout(() => {
       const sim = graphRef.current
       if (!sim) return
+
+      // Pre-calculate group centers for fast lookup
+      const groupMap = new Map<string, UniverseGroup>()
+      if (groups) {
+        groups.forEach(g => groupMap.set(g.id, g))
+      }
+
+      // Fix Theme Nodes (Level 0) positions
+      graphData.nodes.forEach((n: any) => {
+        if (n.level === 0) {
+          const g = groupMap.get(n.id)
+          if (g) {
+            n.fx = g.center.x
+            n.fy = g.center.y
+            n.fz = g.center.z
+          }
+        } else {
+          n.fx = undefined
+          n.fy = undefined
+          n.fz = undefined
+        }
+      })
 
       // Full force reset
       sim.d3Force("link", null)
@@ -54,26 +77,51 @@ export function useForceConfig(
         }))
       } else {
         // --- EXPLORE MODE ---
+        // Implement "Thematic Constellations": Pull nodes toward group centers
+        if (groups && groups.length > 0) {
+          sim.d3Force("x", d3.forceX((n: any) => {
+            const g = n.groupId ? groupMap.get(n.groupId) : null
+            return g ? g.center.x : 0
+          }).strength((n: any) => n.level <= 1 ? 0.1 : 0.05))
+
+          sim.d3Force("y", d3.forceY((n: any) => {
+            const g = n.groupId ? groupMap.get(n.groupId) : null
+            return g ? g.center.y : 0
+          }).strength((n: any) => n.level <= 1 ? 0.1 : 0.05))
+
+          sim.d3Force("z", d3.forceZ((n: any) => {
+            const g = n.groupId ? groupMap.get(n.groupId) : null
+            return g ? g.center.z : 0
+          }).strength((n: any) => n.level <= 1 ? 0.1 : 0.05))
+        }
+
         sim.d3Force("link", d3.forceLink(graphData.links).distance((l: any) => {
           const sNode = nodeMap.get(linkId(l.source as LinkSourceTarget))
           const tNode = nodeMap.get(linkId(l.target as LinkSourceTarget))
           const rS = Math.max(12, (sNode?.val || 10) * 1.5)
           const rT = Math.max(12, (tNode?.val || 10) * 1.5)
           const maxL = Math.min(sNode?.level ?? 4, tNode?.level ?? 4)
-          const base = maxL <= 1 ? 800 : maxL <= 2 ? 400 : 150
+          
+          // Shorter links for semantic connections to keep them tight
+          const isSemantic = l.kind === "semantic"
+          const base = isSemantic ? 50 : (maxL <= 1 ? 600 : maxL <= 2 ? 300 : 100)
+          
           return base + rS + rT
         }))
+
         sim.d3Force("charge", d3.forceManyBody()
-          .strength((n: any) => n.level <= 1 ? -8000 : -1000)
-          .distanceMax(4000))
+          .strength((n: any) => n.level <= 1 ? -6000 : -500)
+          .distanceMax(3000))
+        
         sim.d3Force("center", d3.forceCenter(0, 0, 0))
         sim.d3Force("collide", d3.forceCollide()
-          .radius((n: any) => Math.max(12, (n.val || 10) * 1.5) * 2.0))
+          .radius((n: any) => Math.max(12, (n.val || 10) * 1.5) * 1.8))
       }
 
       sim.d3ReheatSimulation()
     }, 50)
 
     return () => clearTimeout(timeoutId)
-  }, [graphData, selectedId, nodeMap, graphRef])
+  }, [graphData, selectedId, nodeMap, graphRef, groups])
 }
+

@@ -10,7 +10,8 @@ function App() {
   const [masterData, setMasterData] = useState<UniverseGraphData | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const [selectedId, setSelectedId] = useState<string | null>(null)
+  const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set())
+  const selectedId = Array.from(expandedIds).pop() ?? null
   const [isInspectorOpen, setIsInspectorOpen] = useState(false)
   const [stats, setStats] = useState<{ nodes: number; links: number }>({ nodes: 0, links: 0 })
 
@@ -34,8 +35,17 @@ function App() {
 
   const selectedNode = masterData?.nodes.find(n => n.id === selectedId) ?? null
 
-  const handleSelectNode = useCallback((id: string) => {
-    setSelectedId(id)
+  const handleSelectNode = useCallback((id: string, isDoubleClick = false) => {
+    setExpandedIds(prev => {
+      const next = new Set(prev)
+      if (isDoubleClick) {
+        if (next.has(id)) next.delete(id); else next.add(id)
+      } else {
+        next.clear()
+        next.add(id)
+      }
+      return next
+    })
     setIsInspectorOpen(true)
   }, [])
 
@@ -45,12 +55,12 @@ function App() {
 
   const handleBackgroundClick = useCallback(() => {
     setIsInspectorOpen(false)
-    setSelectedId(null)
+    setExpandedIds(new Set())
   }, [])
 
   const handleCloseInspector = useCallback(() => {
     setIsInspectorOpen(false)
-    setSelectedId(null)
+    setExpandedIds(new Set())
   }, [])
 
   return (
@@ -80,12 +90,14 @@ function App() {
                   onStatsChange={handleStatsChange}
                   onBackgroundClick={handleBackgroundClick}
                   selectedId={selectedId}
+                  expandedIds={expandedIds}
                 />
                 {isInspectorOpen && (
                   <div className="inspector-float">
                     <Inspector
                       node={selectedNode}
                       schema={masterData.schema}
+                      groups={masterData.groups}
                       onClose={handleCloseInspector}
                     />
                   </div>

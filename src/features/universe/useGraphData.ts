@@ -6,6 +6,7 @@ export function useGraphData(
   masterData: UniverseGraphData,
   selectedId: string | null,
   activeFilters: Set<string>,
+  expandedIds?: Set<string>,
 ) {
   const nodeMap = useMemo(
     () => buildNodeMap(masterData.nodes),
@@ -20,12 +21,12 @@ export function useGraphData(
   const graphData = useMemo(() => {
     if (masterData.nodes.length === 0) return { nodes: [] as UniverseNode[], links: [] as UniverseLink[] }
 
-    if (!selectedId) {
+    if (!selectedId && (!expandedIds || expandedIds.size === 0)) {
       // Explore mode: level filter + link type filter with orphan pruning
-      // Step 1: nodes whose level filter is active
+      // Step 1: nodes whose level filter is active OR level 0 (themes)
       const levelPassIds = new Set<string>()
       for (const n of masterData.nodes) {
-        if (activeFilters.has(`l${n.level}`)) levelPassIds.add(n.id)
+        if (n.level === 0 || activeFilters.has(`l${n.level}`)) levelPassIds.add(n.id)
       }
 
       // Step 2: links whose type filter is active & both endpoints pass level filter
@@ -42,33 +43,36 @@ export function useGraphData(
         }
       }
 
-      // Step 3: only keep nodes that have at least one visible link (orphan pruning)
+      // Step 3: keep nodes that have links OR are Level 0
       return {
-        nodes: masterData.nodes.filter(n => connectedIds.has(n.id)),
+        nodes: masterData.nodes.filter(n => n.level === 0 || connectedIds.has(n.id)),
         links: visibleLinks,
       }
     }
 
-    // Focus mode: selected node + 1-hop neighbors
+    // Focus mode: Support multiple expanded nodes (Phase 3)
+    const targets = expandedIds && expandedIds.size > 0 ? expandedIds : new Set([selectedId!])
     const finalNodeIds = new Set<string>()
     const finalLinks: UniverseLink[] = []
 
-    finalNodeIds.add(selectedId)
-    const adj = adjacencyMap.get(selectedId)
-    if (adj) {
-      for (const link of adj) {
-        const s = linkId(link.source as LinkSourceTarget)
-        const t = linkId(link.target as LinkSourceTarget)
-        finalNodeIds.add(s === selectedId ? t : s)
-        finalLinks.push(link)
+    for (const id of targets) {
+      finalNodeIds.add(id)
+      const adj = adjacencyMap.get(id)
+      if (adj) {
+        for (const link of adj) {
+          const s = linkId(link.source as LinkSourceTarget)
+          const t = linkId(link.target as LinkSourceTarget)
+          finalNodeIds.add(s === id ? t : s)
+          finalLinks.push(link)
+        }
       }
     }
 
     return {
       nodes: masterData.nodes.filter(n => finalNodeIds.has(n.id)),
-      links: finalLinks,
+      links: Array.from(new Set(finalLinks)), // Deduplicate links
     }
-  }, [masterData, selectedId, activeFilters, adjacencyMap])
+  }, [masterData, selectedId, activeFilters, adjacencyMap, expandedIds])
 
   const distanceMap = useMemo(() => {
     if (!selectedId) return null
