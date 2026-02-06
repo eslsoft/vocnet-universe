@@ -4,9 +4,10 @@ import { Separator } from "@/components/ui/separator"
 type TopbarProps = {
   selectedId: string | null
   stats: { nodes: number; links: number }
+  version?: string
 }
 
-export function Topbar({ selectedId, stats }: TopbarProps) {
+export function Topbar({ selectedId, stats, version }: TopbarProps) {
   return (
     <header className="flex items-center justify-between gap-6 border-b border-border/40 bg-background/90 px-6 py-4 backdrop-blur">
       <div className="flex items-center gap-3">
@@ -19,7 +20,7 @@ export function Topbar({ selectedId, stats }: TopbarProps) {
         </div>
       </div>
       <div className="flex flex-1 items-center justify-center gap-2">
-        <Badge variant="secondary">3D Mock</Badge>
+        {version && <Badge variant="secondary">{version}</Badge>}
         <Badge variant="secondary">{stats.nodes} nodes</Badge>
         <Badge variant="secondary">{stats.links} links</Badge>
       </div>

@@ -3,3 +3,4 @@ spacy==3.7.5
 scikit-learn==1.5.2
 nltk==3.9.1
 networkx==3.3
+ollama==0.4.7
