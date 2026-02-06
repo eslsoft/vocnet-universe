@@ -1,15 +1,28 @@
 import { useEffect, useMemo, useRef, useCallback, useState } from "react"
 import ForceGraph3D, { ForceGraphMethods } from "react-force-graph-3d"
 import * as THREE from "three"
-import { Search } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
-import { cn } from "@/lib/utils"
-import { buildMockUniverse, levelColor, UniverseGraph } from "./mock"
+import * as d3 from "d3-force-3d"
+import { UniverseSearch } from "./UniverseSearch"
+import { ViewSwitcher } from "./ViewSwitcher"
+import { UniverseLegend } from "./UniverseLegend"
+import { buildMockUniverse, UniverseGraph } from "./mock"
 import "./universe.css"
+
+const VISUAL_THEME = {
+  nodes: { l1: "#a855f7", l2: "#38bdf8", l3: "#f59e0b", l4: "#22c55e", selected: "#ffffff" },
+  links: {
+    is_a: "#f472b6",
+    has_kind: "#38bdf8",
+    has_part: "#f97316",
+    action: "#10b981", 
+    property: "#fbbf24", 
+    context: "#38bdf8", 
+    origin: "#a78bfa", 
+    synonym: "#10b981",
+    hierarchy: "#1e293b",
+    default: "#1e293b"
+  }
+}
 
 type UniverseViewProps = {
   onSelectNode: (id: string) => void
@@ -25,454 +38,203 @@ export function UniverseView({
   selectedId,
 }: UniverseViewProps) {
   const graphRef = useRef<ForceGraphMethods | null>(null)
-  const resetCameraRef = useRef({ x: 0, y: 0, z: 2200 })
-  const rawData = useMemo<UniverseGraph>(() => buildMockUniverse(), [])
-  const data = useMemo<UniverseGraph>(() => {
-    return {
-      nodes: rawData.nodes.map((node) => ({ ...node })),
-      links: rawData.links.map((link) => {
-        const sourceId =
-          typeof link.source === "string" ? link.source : link.source.id
-        const targetId =
-          typeof link.target === "string" ? link.target : link.target.id
-        return { source: sourceId, target: targetId, type: link.type }
-      }),
+  const [viewMode, setViewMode] = useState<"semantic" | "category" | "grammar">("semantic")
+  const [masterData, setMasterData] = useState<UniverseGraph>({ nodes: [], links: [] })
+  
+  const [activeFilters, setActiveFilters] = useState<Set<string>>(new Set([
+    "l1", "l2", "l3", "l4", "is_a", "has_kind", "has_part", "action", "property", "context", "origin", "synonym", "hierarchy"
+  ]))
+
+  const toggleFilter = useCallback((id: string) => {
+    setActiveFilters(prev => {
+      const next = new Set(prev); if (next.has(id)) next.delete(id); else next.add(id); return next
+    })
+  }, [])
+
+  useEffect(() => {
+    let active = true
+    const load = async () => {
+      try {
+        const fileName = viewMode === "semantic" ? "semantic_graph.json" : "category_graph.json"
+        const response = await fetch(`/data/${fileName}?t=${Date.now()}`)
+        const raw = await response.json()
+        if (active) setMasterData(raw)
+      } catch (err) {
+        if (active) setMasterData(buildMockUniverse())
+      }
     }
-  }, [rawData])
-  const adjacency = useMemo(() => {
-    const map = new Map<string, Set<string>>()
-    data.nodes.forEach((node) => map.set(node.id, new Set()))
-    data.links.forEach((link) => {
-      const source = typeof link.source === "string" ? link.source : link.source.id
-      const target = typeof link.target === "string" ? link.target : link.target.id
-      map.get(source)?.add(target)
-      map.get(target)?.add(source)
+    void load()
+    return () => { active = false }
+  }, [viewMode])
+
+  const masterAdjacency = useMemo(() => {
+    const map = new Map<string, Set<any>>()
+    masterData.nodes.forEach(n => map.set(n.id, new Set()))
+    masterData.links.forEach(l => {
+      if (!activeFilters.has(l.type)) return
+      const s = typeof l.source === "string" ? l.source : (l.source as any).id
+      const t = typeof l.target === "string" ? l.target : (l.target as any).id
+      if (map.has(s) && map.has(t)) {
+        map.get(s)?.add(l); map.get(t)?.add(l)
+      }
     })
     return map
-  }, [data])
-  const nodeById = useMemo(() => {
-    const map = new Map<string, (typeof data.nodes)[number]>()
-    data.nodes.forEach((node) => map.set(node.id, node))
-    return map
-  }, [data.nodes])
-  const materialCache = useRef<Map<string, THREE.MeshBasicMaterial>>(new Map())
-  const geometryCache = useRef<Map<number, THREE.SphereGeometry>>(new Map())
-  const [isSearchOpen, setIsSearchOpen] = useState(false)
-  const MAX_DEPTH = 3
-  const pendingFocusId = useRef<string | null>(null)
-  const focusAttempts = useRef(0)
+  }, [masterData, activeFilters])
+
+  const graphData = useMemo(() => {
+    if (masterData.nodes.length === 0) return { nodes: [], links: [] }
+    let finalNodeIds = new Set<string>()
+    let finalLinks = new Set<any>()
+
+    if (!selectedId) {
+      masterData.nodes.forEach(n => { if (n.level <= 3 && activeFilters.has(`l${n.level}`)) finalNodeIds.add(n.id) })
+      masterData.links.forEach(l => {
+        if (!activeFilters.has(l.type)) return
+        const s = typeof l.source === "string" ? l.source : (l.source as any).id
+        const t = typeof l.target === "string" ? l.target : (l.target as any).id
+        if (finalNodeIds.has(s) && finalNodeIds.has(t)) finalLinks.add(l)
+      })
+    } else {
+      finalNodeIds.add(selectedId)
+      masterAdjacency.get(selectedId)?.forEach(link => {
+        const s = typeof link.source === "string" ? link.source : (link.source as any).id
+        const t = typeof link.target === "string" ? link.target : (link.target as any).id
+        finalNodeIds.add(s === selectedId ? t : s); finalLinks.add(link)
+      })
+    }
+    return { nodes: masterData.nodes.filter(n => finalNodeIds.has(n.id)), links: Array.from(finalLinks) }
+  }, [masterData, selectedId, activeFilters, masterAdjacency])
 
   const distanceMap = useMemo(() => {
     if (!selectedId) return null
-    const distances = new Map<string, number>()
-    const queue: Array<{ id: string; depth: number }> = [
-      { id: selectedId, depth: 0 },
-    ]
-    distances.set(selectedId, 0)
-
-    while (queue.length > 0) {
-      const current = queue.shift()
-      if (!current) break
-      if (current.depth >= MAX_DEPTH) continue
-      const neighbors = adjacency.get(current.id)
-      if (!neighbors) continue
-      neighbors.forEach((neighborId) => {
-        if (!distances.has(neighborId)) {
-          const depth = current.depth + 1
-          distances.set(neighborId, depth)
-          queue.push({ id: neighborId, depth })
-        }
-      })
-    }
-
-    return distances
-  }, [adjacency, selectedId])
-
-  const filteredGraph = useMemo<UniverseGraph>(() => {
-    if (!distanceMap) return data
-    const visibleIds = new Set(distanceMap.keys())
-    const nodes = data.nodes.filter((node) => visibleIds.has(node.id))
-    const links = data.links.filter((link) => {
-      const sourceId =
-        typeof link.source === "string" ? link.source : link.source.id
-      const targetId =
-        typeof link.target === "string" ? link.target : link.target.id
-      return visibleIds.has(sourceId) && visibleIds.has(targetId)
+    const distances = new Map<string, number>(); distances.set(selectedId, 0)
+    graphData.links.forEach(l => {
+      const s = typeof l.source === "string" ? l.source : (l.source as any).id
+      const t = typeof l.target === "string" ? l.target : (l.target as any).id
+      if (s === selectedId) distances.set(t, 1)
+      else if (t === selectedId) distances.set(s, 1)
     })
-    return {
-      nodes,
-      links: links.map((link) => {
-        const sourceId =
-          typeof link.source === "string" ? link.source : link.source.id
-        const targetId =
-          typeof link.target === "string" ? link.target : link.target.id
-        return {
-          source: sourceId,
-          target: targetId,
-          type: link.type,
-        }
-      }),
-    }
-  }, [data, distanceMap])
-  const filteredNodeById = useMemo(() => {
-    const map = new Map<string, (typeof filteredGraph.nodes)[number]>()
-    filteredGraph.nodes.forEach((node) => map.set(node.id, node))
-    return map
-  }, [filteredGraph.nodes])
+    return distances
+  }, [graphData, selectedId])
 
-  const focusNode = useCallback(
-    (node: any) => {
-      if (!node) return
-      const neighbors = adjacency.get(node.id) ?? new Set<string>()
-      const depthMap = new Map<string, number>()
-      const queue: Array<{ id: string; depth: number }> = [
-        { id: node.id, depth: 0 },
-      ]
-      depthMap.set(node.id, 0)
+  useEffect(() => {
+    const fg = graphRef.current
+    if (!fg || !graphData.nodes.length) return
+    const timeoutId = setTimeout(() => {
+      const sim = graphRef.current
+      if (!sim) return
+      sim.d3Force("x", null); sim.d3Force("y", null); sim.d3Force("z", null); 
+      sim.d3Force("center", null); sim.d3Force("radial", null); sim.d3Force("collide", null);
 
-      while (queue.length > 0) {
-        const current = queue.shift()
-        if (!current) break
-        if (current.depth >= MAX_DEPTH) continue
-        const next = adjacency.get(current.id)
-        if (!next) continue
-        next.forEach((id) => {
-          if (!depthMap.has(id)) {
-            const depth = current.depth + 1
-            depthMap.set(id, depth)
-            queue.push({ id, depth })
+      if (selectedId) {
+        const parentIds = new Set(); const childIds = new Set(); const contextIds = new Set()
+        graphData.links.forEach((l: any) => {
+          const s = l.source.id || l.source; const t = l.target.id || l.target
+          if (s === selectedId) {
+            if (l.type === "is_a") parentIds.add(t);
+            else if (l.type === "has_kind" || l.type === "has_part") childIds.add(t);
+            else contextIds.add(t)
+          } else if (t === selectedId) {
+            if (l.type === "is_a") childIds.add(s);
+            else if (l.type === "has_kind" || l.type === "has_part") parentIds.add(s);
+            else contextIds.add(s)
           }
         })
+        sim.d3Force("x", d3.forceX(0).strength((n: any) => n.id === selectedId ? 2 : (parentIds.has(n.id) || childIds.has(n.id) ? 0.8 : 0)))
+        sim.d3Force("x_flow", d3.forceX((n: any) => { if (n.id === selectedId) return 0; if (parentIds.has(n.id)) return -500; if (childIds.has(n.id)) return 500; return 0 }).strength((n: any) => n.id === selectedId ? 0 : 1))
+        sim.d3Force("y_flow", d3.forceY((n: any) => contextIds.has(n.id) ? 300 : 0).strength(0.5))
+        sim.d3Force("z", d3.forceZ(0).strength(1))
+        sim.d3Force("link")?.distance(150).strength(1)
+        sim.d3Force("charge")?.strength(-300)
+        sim.d3Force("collide", d3.forceCollide().radius(40))
+      } else {
+        sim.d3Force("link")?.distance((l: any) => l.distance || 150).strength(0.6)
+        sim.d3Force("charge")?.strength(-400).distanceMax(1500)
+        sim.d3Force("center", d3.forceCenter(0, 0, 0))
+        sim.d3Force("collide", d3.forceCollide().radius((n: any) => (n.val || 5) + 10))
       }
-      const points: { x: number; y: number; z: number }[] = []
+      sim.d3ReheatSimulation()
+    }, 50)
+    return () => clearTimeout(timeoutId)
+  }, [graphData, selectedId])
 
-      points.push({ x: node.x, y: node.y, z: node.z })
-      depthMap.forEach((depth, id) => {
-        if (depth === 0 || depth > 2) return
-        const neighbor = filteredNodeById.get(id) ?? nodeById.get(id)
-        if (neighbor && typeof neighbor.x === "number") {
-          points.push({ x: neighbor.x, y: neighbor.y, z: neighbor.z })
-        }
-      })
-
-      let minX = Infinity
-      let minY = Infinity
-      let minZ = Infinity
-      let maxX = -Infinity
-      let maxY = -Infinity
-      let maxZ = -Infinity
-
-      points.forEach((p) => {
-        minX = Math.min(minX, p.x)
-        minY = Math.min(minY, p.y)
-        minZ = Math.min(minZ, p.z)
-        maxX = Math.max(maxX, p.x)
-        maxY = Math.max(maxY, p.y)
-        maxZ = Math.max(maxZ, p.z)
-      })
-
-      const center = {
-        x: (minX + maxX) / 2,
-        y: (minY + maxY) / 2,
-        z: (minZ + maxZ) / 2,
-      }
-
-      const radius = Math.max(
-        60,
-        Math.hypot(maxX - minX, maxY - minY, maxZ - minZ) / 2,
-      )
-      const distance = radius * 0.6
-      const camera = graphRef.current?.camera()
-      if (!camera) return
-      const dir = new THREE.Vector3()
-        .subVectors(camera.position, new THREE.Vector3(node.x, node.y, node.z))
-        .normalize()
-      const newPos = new THREE.Vector3(
-        node.x + dir.x * distance,
-        node.y + dir.y * distance,
-        node.z + dir.z * distance,
-      )
-
-      graphRef.current?.cameraPosition(
-        { x: newPos.x, y: newPos.y, z: newPos.z },
-        node,
-        550,
-      )
-    },
-    [adjacency, filteredNodeById, nodeById],
-  )
-
-  const resetCamera = useCallback(() => {
-    const { x, y, z } = resetCameraRef.current
-    graphRef.current?.cameraPosition({ x, y, z }, { x: 0, y: 0, z: 0 }, 900)
-  }, [])
-
-  useEffect(() => {
-    onStatsChange({ nodes: data.nodes.length, links: data.links.length })
-  }, [data.links.length, data.nodes.length, onStatsChange])
-
-
-  useEffect(() => {
-    if (!selectedId) {
-      resetCamera()
-    }
-  }, [resetCamera, selectedId])
-
-  useEffect(() => {
-    if (!selectedId) return
-    const node = filteredNodeById.get(selectedId) ?? nodeById.get(selectedId)
-    if (!node) return
-    pendingFocusId.current = selectedId
-    focusAttempts.current = 0
-  }, [focusNode, nodeById, selectedId])
-
-  useEffect(() => {
-    if (!selectedId) return
-    let raf = 0
-    const tick = () => {
-      const id = pendingFocusId.current
-      if (!id) return
-      const node = filteredNodeById.get(id) ?? nodeById.get(id)
-      if (!node) return
-      const moving =
-        Math.abs(node.vx ?? 0) > 0.02 ||
-        Math.abs(node.vy ?? 0) > 0.02 ||
-        Math.abs(node.vz ?? 0) > 0.02
-      if (!moving || focusAttempts.current >= 6) {
-        pendingFocusId.current = null
-        focusNode(node)
-        return
-      }
-      focusAttempts.current += 1
-      raf = window.requestAnimationFrame(tick)
-    }
-    raf = window.requestAnimationFrame(tick)
-    return () => window.cancelAnimationFrame(raf)
-  }, [filteredNodeById, focusNode, nodeById, selectedId])
-
-
-  useEffect(() => {
-    const controls = graphRef.current?.controls()
-    if (!controls) return
-    controls.enableRotate = true
-    controls.enablePan = true
-    controls.enableZoom = true
-    // Left drag: rotate, Right drag: pan, Wheel: zoom
-    controls.mouseButtons = {
-      LEFT: THREE.MOUSE.ROTATE,
-      MIDDLE: THREE.MOUSE.DOLLY,
-      RIGHT: THREE.MOUSE.PAN,
-    }
-  }, [])
-
-  useEffect(() => {
-    const controls = graphRef.current?.controls()
-    if (!controls) return
-
-    const defaultButtons = {
-      LEFT: THREE.MOUSE.ROTATE,
-      MIDDLE: THREE.MOUSE.DOLLY,
-      RIGHT: THREE.MOUSE.PAN,
-    }
-    const panButtons = {
-      LEFT: THREE.MOUSE.PAN,
-      MIDDLE: THREE.MOUSE.DOLLY,
-      RIGHT: THREE.MOUSE.PAN,
-    }
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.code === "Space") {
-        event.preventDefault()
-        controls.mouseButtons = panButtons
-      }
-    }
-
-    const handleKeyUp = (event: KeyboardEvent) => {
-      if (event.code === "Space") {
-        controls.mouseButtons = defaultButtons
-      }
-    }
-
-    window.addEventListener("keydown", handleKeyDown)
-    window.addEventListener("keyup", handleKeyUp)
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown)
-      window.removeEventListener("keyup", handleKeyUp)
-    }
-  }, [])
-
+  const materialCache = useRef<Map<string, THREE.MeshPhongMaterial>>(new Map())
+  const geometryCache = useRef<Map<number, THREE.SphereGeometry>>(new Map())
   const getMaterial = (color: string, opacity = 1) => {
     const key = `${color}:${opacity}`
-    const cached = materialCache.current.get(key)
-    if (cached) return cached
-    const material = new THREE.MeshBasicMaterial({
-      color,
-      transparent: opacity < 1,
-      opacity,
-    })
-    materialCache.current.set(key, material)
-    return material
+    let mat = materialCache.current.get(key)
+    if (!mat) { mat = new THREE.MeshPhongMaterial({ color, transparent: opacity < 1, opacity, emissive: color, emissiveIntensity: 0.25, shininess: 30 }); materialCache.current.set(key, mat) }
+    return mat
+  }
+  const getGeometry = (level: number) => {
+    let geo = geometryCache.current.get(level)
+    if (!geo) { geo = new THREE.SphereGeometry(1, 24, 24); geometryCache.current.set(level, geo) }
+    return geo
   }
 
-  const getGeometry = (level: number) => {
-    const cached = geometryCache.current.get(level)
-    if (cached) return cached
-    const geometry =
-      level === 0
-        ? new THREE.SphereGeometry(1, 18, 18)
-        : level === 1
-          ? new THREE.SphereGeometry(1, 18, 18)
-          : level === 2
-            ? new THREE.SphereGeometry(1, 16, 16)
-            : new THREE.SphereGeometry(1, 12, 12)
-    geometryCache.current.set(level, geometry)
-    return geometry
+  const createLabelSprite = (text: string, sizeScale = 1, isHighlighted = false) => {
+    const canvas = document.createElement("canvas"); const ctx = canvas.getContext("2d")!
+    const fontSize = 48; ctx.font = `600 ${fontSize}px sans-serif`
+    const width = ctx.measureText(text).width + 40; canvas.width = width; canvas.height = fontSize + 40
+    ctx.fillStyle = isHighlighted ? "rgba(244, 63, 94, 0.95)" : "rgba(15, 23, 42, 0.85)"
+    ctx.roundRect(0, 0, width, canvas.height, 8); ctx.fill()
+    ctx.font = `600 ${fontSize}px sans-serif`; ctx.fillStyle = "white"; ctx.textBaseline = "middle"; ctx.fillText(text, 20, canvas.height / 2)
+    const texture = new THREE.CanvasTexture(canvas); const material = new THREE.SpriteMaterial({ map: texture, transparent: true, depthTest: false })
+    const sprite = new THREE.Sprite(material); sprite.renderOrder = 999
+    sprite.scale.set(width/15 * sizeScale, canvas.height/15 * sizeScale, 1); return sprite
   }
+
+  const resetCamera = useCallback(() => { if (graphRef.current) graphRef.current.cameraPosition({ x: 0, y: 0, z: 2500 }, { x: 0, y: 0, z: 0 }, 1000) }, [])
+
+  useEffect(() => { onStatsChange({ nodes: graphData.nodes.length, links: graphData.links.length }) }, [graphData.links.length, graphData.nodes.length, onStatsChange])
 
   return (
     <div className="universe">
-      <div className="universe-overlay">
-        <div
-          className={cn(
-            "universe-overlay__search",
-            isSearchOpen && "is-open",
-          )}
-        >
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button
-                size="icon"
-                variant="ghost"
-                onClick={() => setIsSearchOpen((prev) => !prev)}
-                aria-label="Toggle search"
-                className="universe-search__icon"
-              >
-                <Search />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>Search</TooltipContent>
-          </Tooltip>
-          {isSearchOpen ? (
-            <Input
-              placeholder="Search word..."
-              className="universe-search__input"
-            />
-          ) : null}
+      <div className="universe-hud">
+        <div className="universe-hud__top">
+          <UniverseSearch nodes={masterData.nodes} onSelect={(node) => { onSelectNode(node.id); if(graphRef.current) graphRef.current.cameraPosition({x:0,y:0,z:800}, {x:0,y:0,z:0}, 1000) }} />
+          <ViewSwitcher value={viewMode} onChange={setViewMode} />
         </div>
-
-        <div className="universe-overlay__views">
-          <Tabs defaultValue="semantic">
-            <TabsList className="universe-tabs">
-              <TabsTrigger value="semantic">Semantic</TabsTrigger>
-              <TabsTrigger value="category">Category</TabsTrigger>
-              <TabsTrigger value="grammar">Grammar</TabsTrigger>
-            </TabsList>
-          </Tabs>
-        </div>
-
-        <div className="universe-overlay__filters">
-          <div className="universe-overlay__label">Filters</div>
-          <Badge variant="outline" className="universe-badge">
-            Location
-          </Badge>
-          <Badge variant="outline" className="universe-badge">
-            People
-          </Badge>
-          <Badge variant="outline" className="universe-badge">
-            Emotion
-          </Badge>
-          <Badge variant="outline" className="universe-badge">
-            Nature
-          </Badge>
-        </div>
+        <UniverseLegend viewMode={viewMode} activeFilters={activeFilters} onToggleFilter={toggleFilter} />
       </div>
 
-      <ForceGraph3D
-        ref={graphRef}
-        graphData={filteredGraph}
-        backgroundColor="#0b0f1a"
-        showNavInfo={false}
-        nodeRelSize={3}
-        linkVisibility={(link) => {
-          if (!distanceMap) return true
-          const sourceId =
-            typeof link.source === "string" ? link.source : link.source.id
-          const targetId =
-            typeof link.target === "string" ? link.target : link.target.id
-          return distanceMap.has(sourceId) && distanceMap.has(targetId)
+      <ForceGraph3D ref={graphRef} graphData={graphData} backgroundColor="#020617" showNavInfo={false} d3VelocityDecay={0.4} warmupTicks={50}
+        linkVisibility={(link: any) => {
+          if (!activeFilters.has(link.type)) return false;
+          if (!selectedId) return true;
+          const s = typeof link.source === "object" ? link.source.id : link.source;
+          const t = typeof link.target === "object" ? link.target.id : link.target;
+          return s === selectedId || t === selectedId;
         }}
-        linkOpacity={(link) => {
-          if (!distanceMap) return 0.15
-          const sourceId =
-            typeof link.source === "string" ? link.source : link.source.id
-          const targetId =
-            typeof link.target === "string" ? link.target : link.target.id
-          const sourceDepth = distanceMap.get(sourceId)
-          const targetDepth = distanceMap.get(targetId)
-          if (sourceDepth === undefined || targetDepth === undefined) return 0
-          const depth = Math.max(sourceDepth, targetDepth)
-          if (depth === 0) return 0.9
-          if (depth === 1) return 0.6
-          if (depth === 2) return 0.35
-          if (depth === 3) return 0.2
-          return 0.1
+        linkColor={(link: any) => {
+          if (!selectedId) return "#1e293b"
+          const type = link.type || "is_a"
+          return VISUAL_THEME.links[type as keyof typeof VISUAL_THEME.links] || VISUAL_THEME.links.default
         }}
-        linkWidth={0.4}
-        nodeLabel={(node) => `${node.label} • ${node.grouping.category}`}
-        onNodeClick={(node) => {
-          pendingFocusId.current = node.id
-          if (node.id === selectedId) {
-            focusAttempts.current = 0
-            window.requestAnimationFrame(() => {
-              focusNode(node)
-            })
-          } else {
-            onSelectNode(node.id)
+        linkWidth={(link: any) => selectedId ? 1.5 : 0.4} 
+        linkDirectionalParticles={(link: any) => {
+          if (!selectedId) return 0;
+          const s = typeof link.source === "object" ? link.source.id : link.source;
+          const t = typeof link.target === "object" ? link.target.id : link.target;
+          return (s === selectedId || t === selectedId) ? 4 : 0;
+        }} 
+        nodeThreeObject={(node: any) => {
+          const isSelected = selectedId === node.id; const dist = distanceMap?.get(node.id); const isNeighbor = dist !== undefined
+          const radius = Math.min(15, Math.max(3, (node.val || 10) / 2))
+          let color = VISUAL_THEME.nodes[`l${node.level as 1|2|3|4}`] || VISUAL_THEME.nodes.l3
+          if (isSelected) color = VISUAL_THEME.nodes.selected
+          const mesh = new THREE.Mesh(getGeometry(4), getMaterial(color, 0.95))
+          mesh.scale.setScalar(radius * (isSelected ? 1.2 : 1))
+          const group = new THREE.Group(); group.add(mesh)
+          if (isSelected || dist === 1 || (!selectedId && node.level <= 2)) {
+            const label = createLabelSprite(node.label, (radius/15 + 0.8) * (isSelected ? 1.2 : 1), isSelected)
+            label.position.set(0, radius + 10, 0); group.add(label)
           }
+          return group
         }}
-        onBackgroundClick={onBackgroundClick}
-        nodeVisibility={(node) => {
-          if (!distanceMap) return true
-          return distanceMap.has(node.id)
-        }}
-        nodeThreeObject={(node) => {
-          const level = node.level ?? 3
-          const base = Math.max(1.5, node.val ?? 6)
-          const depth = distanceMap?.get(node.id)
-          const scale =
-            depth === undefined
-              ? 1
-              : depth === 0
-                ? 2.4
-                : depth === 1
-                  ? 1.7
-                  : depth === 2
-                    ? 1.35
-                    : 1.1
-          const radius = base * scale
-          const geometry = getGeometry(level)
-          const color = node.color ?? levelColor(level)
-          const opacity =
-            depth === undefined
-              ? 1
-              : depth === 0
-                ? 1
-                : depth === 1
-                  ? 0.7
-                  : depth === 2
-                    ? 0.45
-                    : depth === 3
-                      ? 0.25
-                      : 0.12
-          const material = getMaterial(color, opacity)
-          const mesh = new THREE.Mesh(geometry, material)
-          mesh.scale.setScalar(radius)
-          return mesh
-        }}
+        onNodeClick={(node) => { onSelectNode(node.id); if(graphRef.current) graphRef.current.cameraPosition({x:0,y:0,z:800}, {x:0,y:0,z:0}, 1000) }}
+        onBackgroundClick={() => { onBackgroundClick(); resetCamera() }}
       />
-      <div className="universe__hint">
-        Drag to orbit, scroll to zoom, click to inspect.
-      </div>
     </div>
   )
 }

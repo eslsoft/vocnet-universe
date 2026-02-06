@@ -15,8 +15,8 @@ export type UniverseNode = {
 }
 
 export type UniverseLink = {
-  source: string
-  target: string
+  source: string | { id: string }
+  target: string | { id: string }
   type: "hierarchy" | "semantic"
 }
 
@@ -25,159 +25,73 @@ export type UniverseGraph = {
   links: UniverseLink[]
 }
 
-const CATEGORIES = [
-  "Location",
-  "People",
-  "Time",
-  "Action",
-  "Emotion",
-  "Nature",
-  "Abstract",
-]
-
 export const levelColor = (level: number) => {
   switch (level) {
-    case 0:
-      return "#f8fafc"
     case 1:
-      return "#a855f7"
+      return "#a855f7" // Purple (Galaxy)
     case 2:
-      return "#38bdf8"
+      return "#38bdf8" // Cyan (Nebula)
     case 3:
-      return "#f59e0b"
+      return "#f59e0b" // Amber (Star)
+    case 4:
+      return "#22c55e" // Green (Planet)
     default:
-      return "#22c55e"
+      return "#64748b"
   }
 }
 
-const randomPick = <T,>(items: T[]) =>
-  items[Math.floor(Math.random() * items.length)]
-
+// Updated mock to match backend v4.3 logic
 export const buildMockUniverse = (): UniverseGraph => {
   const nodes: UniverseNode[] = []
   const links: UniverseLink[] = []
 
-  const rootCount = 2
-  const galaxyCount = 8
-  const nebulaPerGalaxy = 4
-  const starsPerNebula = 16
-  const planetsPerStar = 4
-
-  for (let i = 0; i < rootCount; i += 1) {
+  const categories = ["human", "nature", "space", "time", "action"]
+  
+  categories.forEach((cat, idx) => {
+    const gId = `g_${cat}`
     nodes.push({
-      id: `root_${i}`,
-      label: `Root ${i + 1}`,
-      level: 0,
-      val: 12,
-      x: (i - 0.5) * 80,
-      y: 0,
-      z: 0,
-      grouping: {
-        semantic: "Root",
-        category: "Abstract",
-        pos: "Noun",
-      },
-      color: levelColor(0),
-    })
-  }
-
-  let galaxyIndex = 0
-  let nebulaIndex = 0
-  let starIndex = 0
-  let planetIndex = 0
-
-  for (let g = 0; g < galaxyCount; g += 1) {
-    const galaxyId = `galaxy_${galaxyIndex++}`
-    const category = randomPick(CATEGORIES)
-    nodes.push({
-      id: galaxyId,
-      label: `Galaxy ${g + 1}`,
+      id: gId,
+      label: cat.toUpperCase(),
       level: 1,
-      val: 10,
-      x: (Math.random() - 0.5) * 400,
-      y: (Math.random() - 0.5) * 400,
-      z: (Math.random() - 0.5) * 240,
-      grouping: {
-        semantic: "Galaxy",
-        category,
-        pos: "Noun",
-      },
-      color: levelColor(1),
-    })
-    links.push({
-      source: `root_${g % rootCount}`,
-      target: galaxyId,
-      type: "hierarchy",
+      val: 20,
+      x: Math.cos(idx) * 500,
+      y: Math.sin(idx) * 500,
+      z: 0,
+      grouping: { semantic: "Galaxy", category: cat, pos: "Noun" }
     })
 
-    for (let n = 0; n < nebulaPerGalaxy; n += 1) {
-      const nebulaId = `nebula_${nebulaIndex++}`
+    // Mock 2 nebulae per galaxy
+    for (let n = 0; n < 2; n++) {
+      const nId = `n_${cat}_${n}`
       nodes.push({
-        id: nebulaId,
-        label: `Nebula ${n + 1}`,
+        id: nId,
+        label: `Cluster ${n}`,
         level: 2,
-        val: 8,
-        x: (Math.random() - 0.5) * 280,
-        y: (Math.random() - 0.5) * 280,
-        z: (Math.random() - 0.5) * 180,
-        grouping: {
-          semantic: "Cluster",
-          category,
-          pos: "Noun",
-        },
-        color: levelColor(2),
+        val: 12,
+        x: Math.cos(idx) * 500 + (n - 0.5) * 200,
+        y: Math.sin(idx) * 500 + (n - 0.5) * 200,
+        z: 50,
+        grouping: { semantic: "Nebula", category: cat, pos: "Noun" }
       })
-      links.push({ source: galaxyId, target: nebulaId, type: "hierarchy" })
+      links.push({ source: gId, target: nId, type: "hierarchy" })
 
-      for (let s = 0; s < starsPerNebula; s += 1) {
-        const starId = `star_${starIndex++}`
+      // Mock 5 words per nebula
+      for (let w = 0; w < 5; w++) {
+        const wId = `w_${cat}_${n}_${w}`
         nodes.push({
-          id: starId,
-          label: `Star ${starIndex}`,
+          id: wId,
+          label: `Word ${w}`,
           level: 3,
           val: 6,
-          x: (Math.random() - 0.5) * 180,
-          y: (Math.random() - 0.5) * 180,
-          z: (Math.random() - 0.5) * 120,
-          grouping: {
-            semantic: "Word",
-            category,
-            pos: "Noun",
-          },
-          color: levelColor(3),
+          x: Math.cos(idx) * 500 + (n - 0.5) * 200 + (Math.random() - 0.5) * 50,
+          y: Math.sin(idx) * 500 + (n - 0.5) * 200 + (Math.random() - 0.5) * 50,
+          z: 50 + (Math.random() - 0.5) * 50,
+          grouping: { semantic: "Word", category: cat, pos: "Noun" }
         })
-        links.push({ source: nebulaId, target: starId, type: "hierarchy" })
-
-        for (let p = 0; p < planetsPerStar; p += 1) {
-          const planetId = `planet_${planetIndex++}`
-          nodes.push({
-            id: planetId,
-            label: `Planet ${planetIndex}`,
-            level: 4,
-            val: 3,
-            x: (Math.random() - 0.5) * 80,
-            y: (Math.random() - 0.5) * 80,
-            z: (Math.random() - 0.5) * 60,
-            grouping: {
-              semantic: "Word",
-              category,
-              pos: "Noun",
-            },
-            color: levelColor(4),
-          })
-          links.push({ source: starId, target: planetId, type: "hierarchy" })
-        }
+        links.push({ source: nId, target: wId, type: "hierarchy" })
       }
     }
-  }
-
-  for (let i = 0; i < 60; i += 1) {
-    const source = `star_${Math.floor(Math.random() * starIndex)}`
-    const target = `star_${Math.floor(Math.random() * starIndex)}`
-    if (source !== target) {
-      links.push({ source, target, type: "semantic" })
-    }
-  }
+  })
 
   return { nodes, links }
 }
