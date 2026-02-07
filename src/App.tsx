@@ -1,108 +1,69 @@
 import "./App.css"
-import { useCallback, useState, useEffect } from "react"
+import { useCallback, useState, useMemo } from "react"
 import { TooltipProvider } from "@/components/ui/tooltip"
-import { Topbar } from "./features/ui/Topbar"
-import { Inspector } from "./features/ui/Inspector"
+import { Topbar, type MultiverseType } from "./features/ui/Topbar"
 import { UniverseView } from "./features/universe/UniverseView"
-import type { UniverseGraphData } from "./types/universe"
+import { UniverseMapper } from "./features/universe/universeMapper"
+import { Inspector } from "./features/ui/Inspector"
+import { CLEAN_MOCK_DATA } from "./features/universe/mockDataCleanV4"
+import { LARGE_MOCK_DATA } from "./features/universe/mockDataLargeV4"
 
 function App() {
-  const [masterData, setMasterData] = useState<UniverseGraphData | null>(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-  const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set())
-  const selectedId = Array.from(expandedIds).pop() ?? null
-  const [isInspectorOpen, setIsInspectorOpen] = useState(false)
-  const [stats, setStats] = useState<{ nodes: number; links: number }>({ nodes: 0, links: 0 })
+  const [selectedId, setSelectedId] = useState<string | null>(null)
+  const [datasetMode, setDatasetMode] = useState<MultiverseType>("clean")
 
-  useEffect(() => {
-    const load = async () => {
-      try {
-        setLoading(true)
-        setError(null)
-        const response = await fetch(`/data/universe_v2.json?t=${Date.now()}`)
-        if (!response.ok) throw new Error(`HTTP ${response.status}`)
-        const raw = await response.json()
-        setMasterData(raw)
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "Failed to load universe data")
-      } finally {
-        setLoading(false)
-      }
-    }
-    void load()
-  }, [])
+  // Map data based on selected mode
+  const { nodes, links } = useMemo(() => {
+    const data = datasetMode === "clean" ? CLEAN_MOCK_DATA : LARGE_MOCK_DATA
+    const mapper = new UniverseMapper()
+    return mapper.mapDataset(data.words)
+  }, [datasetMode])
 
-  const selectedNode = masterData?.nodes.find(n => n.id === selectedId) ?? null
+  const selectedNode = nodes.find((n) => n.id === selectedId) ?? null
 
-  const handleSelectNode = useCallback((id: string, isDoubleClick = false) => {
-    setExpandedIds(prev => {
-      const next = new Set(prev)
-      if (isDoubleClick) {
-        if (next.has(id)) next.delete(id); else next.add(id)
-      } else {
-        next.clear()
-        next.add(id)
-      }
-      return next
-    })
-    setIsInspectorOpen(true)
-  }, [])
-
-  const handleStatsChange = useCallback((next: { nodes: number; links: number }) => {
-    setStats(next)
+  const handleSelectNode = useCallback((id: string) => {
+    setSelectedId(id)
   }, [])
 
   const handleBackgroundClick = useCallback(() => {
-    setIsInspectorOpen(false)
-    setExpandedIds(new Set())
+    setSelectedId(null)
   }, [])
 
-  const handleCloseInspector = useCallback(() => {
-    setIsInspectorOpen(false)
-    setExpandedIds(new Set())
+  const handleMultiverseChange = useCallback((value: MultiverseType) => {
+    setSelectedId(null)
+    setDatasetMode(value)
   }, [])
+
+  const stats = { nodes: nodes.length, links: links.length }
 
   return (
     <TooltipProvider>
       <div className="app-shell">
-        <Topbar selectedId={selectedId} stats={stats} version={masterData?.version} />
+        <Topbar
+          selectedId={selectedId}
+          stats={stats}
+          multiverse={datasetMode}
+          onMultiverseChange={handleMultiverseChange}
+        />
+
         <div className="app-body">
           <main className="app-main">
-            {loading && (
-              <div className="flex items-center justify-center h-full text-slate-400 text-sm">
-                Loading universe data...
-              </div>
-            )}
-            {error && (
-              <div className="flex items-center justify-center h-full">
-                <div className="bg-red-950/80 border border-red-800 rounded-lg p-6 text-center max-w-sm">
-                  <div className="text-red-400 font-semibold mb-2">Failed to load data</div>
-                  <div className="text-red-300/70 text-sm">{error}</div>
-                </div>
-              </div>
-            )}
-            {masterData && !loading && !error && (
-              <>
-                <UniverseView
-                  masterData={masterData}
-                  onSelectNode={handleSelectNode}
-                  onStatsChange={handleStatsChange}
-                  onBackgroundClick={handleBackgroundClick}
-                  selectedId={selectedId}
-                  expandedIds={expandedIds}
+            <UniverseView
+              key={datasetMode}
+              nodes={nodes}
+              links={links}
+              onSelectNode={handleSelectNode}
+              onBackgroundClick={handleBackgroundClick}
+              selectedId={selectedId}
+            />
+
+            {selectedNode && (
+              <div className="inspector-float">
+                <Inspector
+                  node={selectedNode}
+                  onClose={() => setSelectedId(null)}
                 />
-                {isInspectorOpen && (
-                  <div className="inspector-float">
-                    <Inspector
-                      node={selectedNode}
-                      schema={masterData.schema}
-                      groups={masterData.groups}
-                      onClose={handleCloseInspector}
-                    />
-                  </div>
-                )}
-              </>
+              </div>
             )}
           </main>
         </div>

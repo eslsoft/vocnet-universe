@@ -1,166 +1,224 @@
-import { useEffect, useRef, useCallback, useState } from "react"
+import { useEffect, useRef, useCallback, useMemo } from "react"
 import ForceGraph3D from "react-force-graph-3d"
 import type { ForceGraphMethods } from "react-force-graph-3d"
-import { UniverseSearch } from "./UniverseSearch"
-import { UniverseLegend } from "./UniverseLegend"
-import type { UniverseGraphData } from "@/types/universe"
-import { resolveLinkColor } from "./config"
-import { linkId } from "./linkHelpers"
-import { useGraphData } from "./useGraphData"
-import { useForceConfig } from "./useForceConfig"
-import { useNodeRenderer } from "./useNodeRenderer"
+import * as THREE from "three"
+import * as d3 from "d3-force-3d"
+import type { CelestialNode, CelestialLink } from "@/types/universe-v4"
+import { useLODRenderer } from "./useLODRenderer"
 import { useCameraZoom } from "./useCameraZoom"
 import "./universe.css"
 
 type UniverseViewProps = {
-  masterData: UniverseGraphData
-  onSelectNode: (id: string, isDoubleClick?: boolean) => void
-  onStatsChange: (stats: { nodes: number; links: number }) => void
+  nodes: CelestialNode[]
+  links: CelestialLink[]
+  onSelectNode: (id: string) => void
   onBackgroundClick: () => void
   selectedId: string | null
-  expandedIds: Set<string>
 }
 
 export function UniverseView({
-  masterData,
+  nodes,
+  links,
   onSelectNode,
-  onStatsChange,
   onBackgroundClick,
   selectedId,
-  expandedIds,
 }: UniverseViewProps) {
   const graphRef = useRef<ForceGraphMethods>(undefined)
   const zoomRef = useRef<HTMLSpanElement | null>(null)
+  const sceneSetupDone = useRef(false)
 
-  const schema = masterData.schema
-
-  // Active filters — lazy initializer populates from loaded data
-  const [activeFilters, setActiveFilters] = useState<Set<string>>(() => {
-    const set = new Set<string>()
-    for (const n of masterData.nodes) if (n.level > 0) set.add(`l${n.level}`)
-    for (const l of masterData.links) set.add(l.type)
-    return set
-  })
-
-  const toggleFilter = useCallback((id: string) => {
-    setActiveFilters(prev => {
-      const next = new Set(prev)
-      if (next.has(id)) next.delete(id); else next.add(id)
-      return next
+  const neighborIds = useMemo(() => {
+    if (!selectedId) return new Set<string>()
+    const neighbors = new Set<string>()
+    const selNode = nodes.find(n => n.id === selectedId)
+    if (selNode) selNode.relations.forEach(r => neighbors.add(r.targetId))
+    nodes.forEach(n => {
+      if (n.relations.some(r => r.targetId === selectedId)) neighbors.add(n.id)
     })
-  }, [])
+    return neighbors
+  }, [selectedId, nodes])
 
-  // Data layer
-  const { nodeMap, graphData, distanceMap } = useGraphData(masterData, selectedId, activeFilters, expandedIds)
-
-  // Force simulation
-  useForceConfig(graphRef, graphData, selectedId, nodeMap, masterData.groups)
-
-  // Node rendering (cached)
-  const nodeThreeObject = useNodeRenderer(schema, selectedId, distanceMap)
-
-  // Camera zoom (zero React renders)
+  const nodeThreeObject = useLODRenderer(graphRef, selectedId, neighborIds)
   useCameraZoom(graphRef, zoomRef)
 
-  // Report stats
+  // --- SCENE AMBIANCE & STARFIELD ---
   useEffect(() => {
-    onStatsChange({ nodes: graphData.nodes.length, links: graphData.links.length })
-  }, [graphData, onStatsChange])
+    if (!graphRef.current || sceneSetupDone.current) return
+    const scene = graphRef.current.scene()
+    if (!scene) return
+    sceneSetupDone.current = true
 
-  // Focus camera on selection
+    // 1. Lighting
+    scene.add(new THREE.AmbientLight(0xffffff, 0.4))
+    const dl = new THREE.DirectionalLight(0xffffff, 0.6)
+    dl.position.set(1000, 1000, 1000)
+    scene.add(dl)
+
+    // 2. Starfield (Atmosphere)
+    const starsGeometry = new THREE.BufferGeometry()
+    const starsCount = 6000
+    const posArray = new Float32Array(starsCount * 3)
+    for (let i = 0; i < starsCount * 3; i++) {
+      posArray[i] = (Math.random() - 0.5) * 15000 
+    }
+    starsGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3))
+    const starsMaterial = new THREE.PointsMaterial({
+      color: 0xffffff,
+      size: 2,
+      transparent: true,
+      opacity: 0.5,
+      sizeAttenuation: true
+    })
+    const starField = new THREE.Points(starsGeometry, starsMaterial)
+    scene.add(starField)
+  }, [])
+
+  useEffect(() => {
+    const sim = graphRef.current
+    if (!sim || nodes.length === 0) return
+
+    const timeout = setTimeout(() => {
+      const themeCenters: Record<string, { x: number; y: number; z: number }> = {
+        theme_abstract: { x: 0, y: 0, z: 0 },
+        theme_communication: { x: 2500, y: 0, z: 0 },
+        theme_education: { x: -1200, y: 2200, z: 0 },
+        theme_technology: { x: -1200, y: -2200, z: 0 },
+        theme_science: { x: 1200, y: 2200, z: 1200 },
+        theme_emotion: { x: 1200, y: -2200, z: -1200 },
+        theme_action: { x: 0, y: 0, z: 2500 },
+      }
+
+      sim.d3Force("link", d3.forceLink(links)
+        .id((d: any) => d.id)
+        .distance((l: any) => {
+          if (l.type === "hypernym") {
+            const source = nodes.find(n => n.id === (typeof l.source === 'string' ? l.source : l.source.id))
+            const target = nodes.find(n => n.id === (typeof l.target === 'string' ? l.target : l.target.id))
+            if (source?.celestialType.includes('giant') && target?.celestialType === 'supergiant') return 1000
+            return 400
+          }
+          return 600
+        })
+        .strength((l: any) => l.type === "hypernym" ? 1 : 0.1)
+      )
+
+      sim.d3Force("charge", d3.forceManyBody().strength((n: any) => {
+        const node = n as CelestialNode
+        if (node.celestialType === "supergiant") return -25000
+        if (node.celestialType.includes("giant")) return -10000
+        return -800 
+      }).distanceMax(2000))
+
+      sim.d3Force("x", d3.forceX((n: any) => {
+        const node = n as CelestialNode
+        const isStar = node.celestialType.includes("giant") || node.celestialType === "supergiant" || node.celestialType === "main_sequence"
+        return isStar ? (themeCenters[node.themeId]?.x || 0) : n.x
+      }).strength((n: any) => (n as CelestialNode).celestialType.includes("giant") || (n as CelestialNode).celestialType === "supergiant" ? 0.4 : 0))
+
+      sim.d3Force("y", d3.forceY((n: any) => {
+        const node = n as CelestialNode
+        const isStar = node.celestialType.includes("giant") || node.celestialType === "supergiant" || node.celestialType === "main_sequence"
+        return isStar ? (themeCenters[node.themeId]?.y || 0) : n.y
+      }).strength((n: any) => (n as CelestialNode).celestialType.includes("giant") || (n as CelestialNode).celestialType === "supergiant" ? 0.4 : 0))
+
+      sim.d3Force("z", d3.forceZ((n: any) => {
+        const node = n as CelestialNode
+        const isStar = node.celestialType.includes("giant") || node.celestialType === "supergiant" || node.celestialType === "main_sequence"
+        return isStar ? (themeCenters[node.themeId]?.z || 0) : n.z
+      }).strength((n: any) => (n as CelestialNode).celestialType.includes("giant") || (n as CelestialNode).celestialType === "supergiant" ? 0.4 : 0))
+
+      sim.d3Force("collide", d3.forceCollide().radius((n: any) => (n as CelestialNode).radius * 2).strength(0.7))
+      sim.d3VelocityDecay(0.3)
+      sim.d3ReheatSimulation()
+    }, 100)
+    return () => clearTimeout(timeout)
+  }, [nodes, links])
+
   const performFocus = useCallback((nodeId: string) => {
     const fg = graphRef.current
     if (!fg) return
-    const meta = nodeMap.get(nodeId)
-    if (!meta) return
-    const isHub = meta.level <= 1
-    const distance = isHub ? 1200 : 500
-    const lookAtOffset = isHub ? 150 : 60
-    fg.cameraPosition(
-      { x: 0, y: 0, z: distance },
-      { x: lookAtOffset, y: 0, z: 0 },
-      1000,
-    )
-  }, [nodeMap])
+    const node = nodes.find((n) => n.id === nodeId)
+    if (!node || node.x === undefined) return
+    const camera = fg.camera(); const currentPos = camera.position
+    const direction = new THREE.Vector3(currentPos.x - node.x, currentPos.y - node.y, currentPos.z - node.z).normalize()
+    const isStar = node.celestialType.includes("giant") || node.celestialType === "supergiant" || node.celestialType === "main_sequence"
+    let distance = node.radius * 10
+    if (isStar) distance = Math.max(distance, 600); else distance = Math.max(distance, 300)
+    fg.cameraPosition({ x: node.x + direction.x * distance, y: node.y + direction.y * distance + (distance * 0.2), z: node.z + direction.z * distance }, { x: node.x, y: node.y, z: node.z }, 1200)
+  }, [nodes])
 
   useEffect(() => {
-    if (selectedId && expandedIds.size <= 1) {
+    if (selectedId) {
       const timer = setTimeout(() => performFocus(selectedId), 150)
       return () => clearTimeout(timer)
     }
-  }, [selectedId, expandedIds.size, performFocus])
+  }, [selectedId, performFocus])
 
-  // Init camera controls
   useEffect(() => {
     if (graphRef.current) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const controls = graphRef.current.controls() as any
-      if (controls) {
-        controls.minDistance = 100
-        controls.maxDistance = 10000
-      }
+      const controls = graphRef.current.controls() as { minDistance: number; maxDistance: number }
+      if (controls) { controls.minDistance = 50; controls.maxDistance = 15000 }
     }
   }, [])
 
+  const getLinkColor = useCallback((link: CelestialLink) => {
+    const sId = typeof link.source === "string" ? link.source : link.source.id
+    const tId = typeof link.target === "string" ? link.target : link.target.id
+    if (selectedId && (sId === selectedId || tId === selectedId)) return "#fbbf24"
+    
+    // Check if it's a "backbone" link (between major stars)
+    const s = nodes.find(n => n.id === sId)
+    const t = nodes.find(n => n.id === tId)
+    const isBackbone = (s?.celestialType === 'supergiant' || s?.celestialType.includes('giant')) && 
+                       (t?.celestialType === 'supergiant' || t?.celestialType.includes('giant'))
+    
+    return isBackbone ? "rgba(71, 85, 105, 0.4)" : "rgba(30, 41, 59, 0.1)"
+  }, [selectedId, nodes])
+
   return (
     <div className="universe">
-      <div className="universe-hud">
-        <div className="universe-hud__top">
-          <UniverseSearch nodes={masterData.nodes} schema={schema} onSelect={(node) => onSelectNode(node.id)} />
-        </div>
-        {schema && (
-          <UniverseLegend schema={schema} activeFilters={activeFilters} onToggleFilter={toggleFilter} />
-        )}
-      </div>
-
       <div className="universe-zoom-indicator">
         <span className="universe-zoom-indicator__label">Zoom Level</span>
         <span className="universe-zoom-indicator__value" ref={zoomRef}>100%</span>
       </div>
-
       <ForceGraph3D
         ref={graphRef}
-        graphData={graphData}
+        graphData={{ nodes, links }}
         backgroundColor="#020617"
         showNavInfo={false}
-        d3VelocityDecay={0.4}
         nodeThreeObject={nodeThreeObject}
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        onNodeClick={(node: any) => onSelectNode(node.id as string)}
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        onNodeRightClick={(node: any) => onSelectNode(node.id as string, true)}
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        linkVisibility={(link: any) => activeFilters.has(link.type as string)}
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        linkColor={(link: any) => {
-          if (selectedId) {
-            const s = linkId(link.source)
-            const t = linkId(link.target)
-            if (s === selectedId || t === selectedId) return resolveLinkColor(schema, link.type)
-            return "#0f172a"
-          }
-          return "#1e293b"
+        onNodeClick={(node) => onSelectNode((node as CelestialNode).id)}
+        linkVisibility={(link) => {
+          const l = link as CelestialLink
+          const sId = typeof l.source === "string" ? l.source : l.source.id
+          const tId = typeof l.target === "string" ? l.target : l.target.id
+          
+          if (selectedId) return sId === selectedId || tId === selectedId
+          
+          // Show only backbone links when nothing is selected
+          const s = nodes.find(n => n.id === sId)
+          const t = nodes.find(n => n.id === tId)
+          return (s?.celestialType === 'supergiant' || s?.celestialType.includes('giant')) && 
+                 (t?.celestialType === 'supergiant' || t?.celestialType.includes('giant'))
         }}
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        linkWidth={(link: any) => {
-          if (selectedId) {
-            const s = linkId(link.source)
-            const t = linkId(link.target)
-            return (s === selectedId || t === selectedId) ? 2 : 0.2
-          }
-          return 0.5
+        linkColor={(link) => getLinkColor(link as CelestialLink)}
+        linkWidth={(link) => {
+          const l = link as CelestialLink
+          const sId = typeof l.source === "string" ? l.source : l.source.id
+          const tId = typeof l.target === "string" ? l.target : l.target.id
+          return (selectedId && (sId === selectedId || tId === selectedId)) ? 2.5 : 0.8
         }}
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        linkDirectionalParticles={(link: any) => {
-          if (!selectedId) return 0
-          const s = linkId(link.source)
-          const t = linkId(link.target)
-          return (s === selectedId || t === selectedId) ? 4 : 0
+        linkDirectionalParticles={(link) => {
+          const l = link as CelestialLink
+          const sId = typeof l.source === "string" ? l.source : l.source.id
+          const tId = typeof l.target === "string" ? l.target : l.target.id
+          return (selectedId && (sId === selectedId || tId === selectedId)) ? 6 : 0
         }}
-        linkDirectionalParticleWidth={2}
+        linkDirectionalParticleWidth={2.5}
+        linkDirectionalParticleSpeed={0.006}
         onBackgroundClick={() => {
           onBackgroundClick()
-          graphRef.current?.cameraPosition({ x: 0, y: 0, z: 2500 }, { x: 0, y: 0, z: 0 }, 1000)
+          graphRef.current?.cameraPosition({ x: 0, y: 0, z: 4000 }, { x: 0, y: 0, z: 0 }, 1500)
         }}
       />
     </div>
