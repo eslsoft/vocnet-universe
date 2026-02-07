@@ -16,13 +16,24 @@ function App() {
 
   // 1. Load universe list
   useEffect(() => {
-    fetch("/universes.json")
+    let active = true
+    const controller = new AbortController()
+    fetch("/universes.json", { signal: controller.signal })
       .then(res => res.json())
       .then((data: UniverseConfig[]) => {
+        if (!active) return
         setUniverses(data)
         if (data.length > 0) setDatasetMode(data[0].id)
       })
-      .catch(err => console.error("Failed to load universes:", err))
+      .catch(err => {
+        if (err?.name !== "AbortError") {
+          console.error("Failed to load universes:", err)
+        }
+      })
+    return () => {
+      active = false
+      controller.abort()
+    }
   }, [])
 
   // 2. Load selected universe data
@@ -31,16 +42,25 @@ function App() {
     if (!config) return
 
     setIsLoading(true)
-    fetch(config.url)
+    let active = true
+    const controller = new AbortController()
+    fetch(config.url, { signal: controller.signal })
       .then(res => res.json())
       .then((data: UniverseData) => {
+        if (!active) return
         setRawContent(data)
         setIsLoading(false)
       })
       .catch(err => {
-        console.error("Failed to load universe data:", err)
+        if (err?.name !== "AbortError") {
+          console.error("Failed to load universe data:", err)
+        }
         setIsLoading(false)
       })
+    return () => {
+      active = false
+      controller.abort()
+    }
   }, [datasetMode, universes])
 
   // 3. Map data
