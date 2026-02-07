@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import type { CelestialNode } from "@/types/universe-v4"
+import type { CelestialNode } from "@/types/universe"
 import { Separator } from "@/components/ui/separator"
 
 type InspectorProps = {

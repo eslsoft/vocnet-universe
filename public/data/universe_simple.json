@@ -1,0 +1,1163 @@
+{
+  "version": "v4.0-static",
+  "meta": {
+    "generatedAt": 1770424708290,
+    "wordCount": 55
+  },
+  "words": [
+    {
+      "id": "word_communicate",
+      "word": "communicate",
+      "frequency": 5800,
+      "firstRecordedYear": 1530,
+      "hierarchyLevel": 1,
+      "pos": "verb",
+      "definition": "to share or exchange information",
+      "relations": [
+        {
+          "targetId": "word_listen",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_listen",
+      "word": "listen",
+      "frequency": 6800,
+      "firstRecordedYear": 1200,
+      "hierarchyLevel": 3,
+      "pos": "verb",
+      "definition": "to give attention with the ear",
+      "relations": [
+        {
+          "targetId": "word_communicate",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication",
+      "solarSystemId": "sub_verbal"
+    },
+    {
+      "id": "word_speak",
+      "word": "speak",
+      "frequency": 8520,
+      "firstRecordedYear": 1200,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "to say words orally",
+      "relations": [
+        {
+          "targetId": "word_talk",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_say",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_whisper",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_shout",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication",
+      "solarSystemId": "sub_verbal"
+    },
+    {
+      "id": "word_talk",
+      "word": "talk",
+      "frequency": 9800,
+      "firstRecordedYear": 1250,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "informal spoken communication",
+      "relations": [
+        {
+          "targetId": "word_speak",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication",
+      "solarSystemId": "sub_verbal"
+    },
+    {
+      "id": "word_say",
+      "word": "say",
+      "frequency": 12000,
+      "firstRecordedYear": 900,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "to express in words",
+      "relations": [
+        {
+          "targetId": "word_speak",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication",
+      "solarSystemId": "sub_verbal"
+    },
+    {
+      "id": "word_whisper",
+      "word": "whisper",
+      "frequency": 1200,
+      "firstRecordedYear": 1400,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "to speak very softly",
+      "relations": [
+        {
+          "targetId": "word_speak",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication",
+      "solarSystemId": "sub_verbal"
+    },
+    {
+      "id": "word_shout",
+      "word": "shout",
+      "frequency": 1500,
+      "firstRecordedYear": 1350,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "to say loudly",
+      "relations": [
+        {
+          "targetId": "word_speak",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication",
+      "solarSystemId": "sub_verbal"
+    },
+    {
+      "id": "word_write",
+      "word": "write",
+      "frequency": 7200,
+      "firstRecordedYear": 900,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "to mark words",
+      "relations": [
+        {
+          "targetId": "word_compose",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_text",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_email",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication",
+      "solarSystemId": "sub_written"
+    },
+    {
+      "id": "word_compose",
+      "word": "compose",
+      "frequency": 2200,
+      "firstRecordedYear": 1450,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "to create written work",
+      "relations": [
+        {
+          "targetId": "word_write",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication",
+      "solarSystemId": "sub_written"
+    },
+    {
+      "id": "word_text",
+      "word": "text",
+      "frequency": 8500,
+      "firstRecordedYear": 1369,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "to send a message",
+      "relations": [
+        {
+          "targetId": "word_write",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication",
+      "solarSystemId": "sub_written"
+    },
+    {
+      "id": "word_email",
+      "word": "email",
+      "frequency": 6200,
+      "firstRecordedYear": 1982,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "to send electronic mail",
+      "relations": [
+        {
+          "targetId": "word_write",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication",
+      "solarSystemId": "sub_written"
+    },
+    {
+      "id": "word_educate",
+      "word": "educate",
+      "frequency": 3500,
+      "firstRecordedYear": 1450,
+      "hierarchyLevel": 1,
+      "pos": "verb",
+      "definition": "to give intellectual instruction",
+      "relations": [
+        {
+          "targetId": "word_teach",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_study",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_teach",
+      "word": "teach",
+      "frequency": 7500,
+      "firstRecordedYear": 1050,
+      "hierarchyLevel": 3,
+      "pos": "verb",
+      "definition": "to impart knowledge",
+      "relations": [
+        {
+          "targetId": "word_educate",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_study",
+      "word": "study",
+      "frequency": 6800,
+      "firstRecordedYear": 1300,
+      "hierarchyLevel": 3,
+      "pos": "verb",
+      "definition": "to devote time to learning",
+      "relations": [
+        {
+          "targetId": "word_educate",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_learn",
+      "word": "learn",
+      "frequency": 9200,
+      "firstRecordedYear": 825,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "to gain knowledge or skill",
+      "relations": [
+        {
+          "targetId": "word_memorize",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_practice",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_understand",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_memorize",
+      "word": "memorize",
+      "frequency": 1800,
+      "firstRecordedYear": 1591,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "to commit to memory",
+      "relations": [
+        {
+          "targetId": "word_learn",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_practice",
+      "word": "practice",
+      "frequency": 5200,
+      "firstRecordedYear": 1400,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "repeated exercise",
+      "relations": [
+        {
+          "targetId": "word_learn",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_understand",
+      "word": "understand",
+      "frequency": 6500,
+      "firstRecordedYear": 1300,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "to comprehend",
+      "relations": [
+        {
+          "targetId": "word_learn",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_school",
+      "word": "school",
+      "frequency": 8900,
+      "firstRecordedYear": 1050,
+      "hierarchyLevel": 2,
+      "pos": "noun",
+      "definition": "institution for education",
+      "relations": [
+        {
+          "targetId": "word_university",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_classroom",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_college",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education",
+      "solarSystemId": "sub_institution"
+    },
+    {
+      "id": "word_university",
+      "word": "university",
+      "frequency": 5500,
+      "firstRecordedYear": 1300,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "higher education institution",
+      "relations": [
+        {
+          "targetId": "word_school",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education",
+      "solarSystemId": "sub_institution"
+    },
+    {
+      "id": "word_classroom",
+      "word": "classroom",
+      "frequency": 2800,
+      "firstRecordedYear": 1870,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "room for teaching",
+      "relations": [
+        {
+          "targetId": "word_school",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education",
+      "solarSystemId": "sub_institution"
+    },
+    {
+      "id": "word_college",
+      "word": "college",
+      "frequency": 6200,
+      "firstRecordedYear": 1380,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "educational institution",
+      "relations": [
+        {
+          "targetId": "word_school",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education",
+      "solarSystemId": "sub_institution"
+    },
+    {
+      "id": "word_technology",
+      "word": "technology",
+      "frequency": 6500,
+      "firstRecordedYear": 1615,
+      "hierarchyLevel": 1,
+      "pos": "noun",
+      "definition": "application of science",
+      "relations": [
+        {
+          "targetId": "word_computer",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_internet",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_computer",
+      "word": "computer",
+      "frequency": 8200,
+      "firstRecordedYear": 1640,
+      "hierarchyLevel": 3,
+      "pos": "noun",
+      "definition": "electronic device",
+      "relations": [
+        {
+          "targetId": "word_technology",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_internet",
+      "word": "internet",
+      "frequency": 7200,
+      "firstRecordedYear": 1974,
+      "hierarchyLevel": 3,
+      "pos": "noun",
+      "definition": "global network",
+      "relations": [
+        {
+          "targetId": "word_technology",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_code",
+      "word": "code",
+      "frequency": 4200,
+      "firstRecordedYear": 1980,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "computer instructions",
+      "relations": [
+        {
+          "targetId": "word_program",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_debug",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_compile",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology",
+      "solarSystemId": "sub_software"
+    },
+    {
+      "id": "word_program",
+      "word": "program",
+      "frequency": 6500,
+      "firstRecordedYear": 1945,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "to write code",
+      "relations": [
+        {
+          "targetId": "word_code",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology",
+      "solarSystemId": "sub_software"
+    },
+    {
+      "id": "word_debug",
+      "word": "debug",
+      "frequency": 1200,
+      "firstRecordedYear": 1947,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "to fix errors",
+      "relations": [
+        {
+          "targetId": "word_code",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology",
+      "solarSystemId": "sub_software"
+    },
+    {
+      "id": "word_compile",
+      "word": "compile",
+      "frequency": 1500,
+      "firstRecordedYear": 1960,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "to translate code",
+      "relations": [
+        {
+          "targetId": "word_code",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology",
+      "solarSystemId": "sub_software"
+    },
+    {
+      "id": "word_software",
+      "word": "software",
+      "frequency": 5800,
+      "firstRecordedYear": 1958,
+      "hierarchyLevel": 2,
+      "pos": "noun",
+      "definition": "programs and systems",
+      "relations": [
+        {
+          "targetId": "word_algorithm",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_database",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_application",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology",
+      "solarSystemId": "sub_software"
+    },
+    {
+      "id": "word_algorithm",
+      "word": "algorithm",
+      "frequency": 2800,
+      "firstRecordedYear": 1950,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "step-by-step procedure",
+      "relations": [
+        {
+          "targetId": "word_software",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology",
+      "solarSystemId": "sub_software"
+    },
+    {
+      "id": "word_database",
+      "word": "database",
+      "frequency": 3500,
+      "firstRecordedYear": 1962,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "organized data",
+      "relations": [
+        {
+          "targetId": "word_software",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology",
+      "solarSystemId": "sub_software"
+    },
+    {
+      "id": "word_application",
+      "word": "application",
+      "frequency": 5200,
+      "firstRecordedYear": 1985,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "software program",
+      "relations": [
+        {
+          "targetId": "word_software",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology",
+      "solarSystemId": "sub_software"
+    },
+    {
+      "id": "word_science",
+      "word": "science",
+      "frequency": 8500,
+      "firstRecordedYear": 1340,
+      "hierarchyLevel": 1,
+      "pos": "noun",
+      "definition": "systematic knowledge",
+      "relations": [
+        {
+          "targetId": "word_experiment",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_theory",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_experiment",
+      "word": "experiment",
+      "frequency": 4200,
+      "firstRecordedYear": 1362,
+      "hierarchyLevel": 3,
+      "pos": "verb",
+      "definition": "scientific test",
+      "relations": [
+        {
+          "targetId": "word_science",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_theory",
+      "word": "theory",
+      "frequency": 5500,
+      "firstRecordedYear": 1592,
+      "hierarchyLevel": 3,
+      "pos": "noun",
+      "definition": "system of ideas",
+      "relations": [
+        {
+          "targetId": "word_science",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_research",
+      "word": "research",
+      "frequency": 6800,
+      "firstRecordedYear": 1577,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "systematic investigation",
+      "relations": [
+        {
+          "targetId": "word_analyze",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_observe",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_measure",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_analyze",
+      "word": "analyze",
+      "frequency": 4800,
+      "firstRecordedYear": 1598,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "to examine in detail",
+      "relations": [
+        {
+          "targetId": "word_research",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_observe",
+      "word": "observe",
+      "frequency": 4500,
+      "firstRecordedYear": 1374,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "to watch carefully",
+      "relations": [
+        {
+          "targetId": "word_research",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_measure",
+      "word": "measure",
+      "frequency": 5200,
+      "firstRecordedYear": 1300,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "to determine size",
+      "relations": [
+        {
+          "targetId": "word_research",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_emotion",
+      "word": "emotion",
+      "frequency": 4500,
+      "firstRecordedYear": 1579,
+      "hierarchyLevel": 1,
+      "pos": "noun",
+      "definition": "feeling or sentiment",
+      "relations": [
+        {
+          "targetId": "word_love",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_fear",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_joy",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_love",
+      "word": "love",
+      "frequency": 10500,
+      "firstRecordedYear": 900,
+      "hierarchyLevel": 3,
+      "pos": "verb",
+      "definition": "deep affection",
+      "relations": [
+        {
+          "targetId": "word_emotion",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_fear",
+      "word": "fear",
+      "frequency": 5500,
+      "firstRecordedYear": 900,
+      "hierarchyLevel": 3,
+      "pos": "noun",
+      "definition": "anxiety from danger",
+      "relations": [
+        {
+          "targetId": "word_emotion",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_joy",
+      "word": "joy",
+      "frequency": 4200,
+      "firstRecordedYear": 1200,
+      "hierarchyLevel": 3,
+      "pos": "noun",
+      "definition": "great pleasure",
+      "relations": [
+        {
+          "targetId": "word_emotion",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_feel",
+      "word": "feel",
+      "frequency": 9500,
+      "firstRecordedYear": 900,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "to experience emotion",
+      "relations": [
+        {
+          "targetId": "word_happy",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_sad",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_angry",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_happy",
+      "word": "happy",
+      "frequency": 6800,
+      "firstRecordedYear": 1380,
+      "hierarchyLevel": 4,
+      "pos": "adj",
+      "definition": "feeling pleasure",
+      "relations": [
+        {
+          "targetId": "word_feel",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_sad",
+      "word": "sad",
+      "frequency": 5200,
+      "firstRecordedYear": 900,
+      "hierarchyLevel": 4,
+      "pos": "adj",
+      "definition": "feeling sorrow",
+      "relations": [
+        {
+          "targetId": "word_feel",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_angry",
+      "word": "angry",
+      "frequency": 3800,
+      "firstRecordedYear": 1250,
+      "hierarchyLevel": 4,
+      "pos": "adj",
+      "definition": "feeling rage",
+      "relations": [
+        {
+          "targetId": "word_feel",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_action",
+      "word": "action",
+      "frequency": 7500,
+      "firstRecordedYear": 1300,
+      "hierarchyLevel": 1,
+      "pos": "noun",
+      "definition": "process of doing",
+      "relations": [
+        {
+          "targetId": "word_work",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_create",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_work",
+      "word": "work",
+      "frequency": 11000,
+      "firstRecordedYear": 900,
+      "hierarchyLevel": 3,
+      "pos": "verb",
+      "definition": "to perform labor",
+      "relations": [
+        {
+          "targetId": "word_action",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_create",
+      "word": "create",
+      "frequency": 6500,
+      "firstRecordedYear": 1430,
+      "hierarchyLevel": 3,
+      "pos": "verb",
+      "definition": "to bring into existence",
+      "relations": [
+        {
+          "targetId": "word_action",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_move",
+      "word": "move",
+      "frequency": 9200,
+      "firstRecordedYear": 1300,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "to change position",
+      "relations": [
+        {
+          "targetId": "word_run",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_walk",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_jump",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_run",
+      "word": "run",
+      "frequency": 9800,
+      "firstRecordedYear": 900,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "to move quickly",
+      "relations": [
+        {
+          "targetId": "word_move",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_walk",
+      "word": "walk",
+      "frequency": 8500,
+      "firstRecordedYear": 1200,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "to move on foot",
+      "relations": [
+        {
+          "targetId": "word_move",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_jump",
+      "word": "jump",
+      "frequency": 4200,
+      "firstRecordedYear": 1530,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "to leap",
+      "relations": [
+        {
+          "targetId": "word_move",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    }
+  ],
+  "galaxies": [
+    {
+      "id": "theme_abstract",
+      "name": "Abstract",
+      "color": "#9ca3af",
+      "center": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "id": "theme_communication",
+      "name": "Communication",
+      "color": "#60a5fa",
+      "center": {
+        "x": 2500,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "id": "theme_education",
+      "name": "Education",
+      "color": "#34d399",
+      "center": {
+        "x": -1200,
+        "y": 2200,
+        "z": 0
+      }
+    },
+    {
+      "id": "theme_technology",
+      "name": "Technology",
+      "color": "#a78bfa",
+      "center": {
+        "x": -1200,
+        "y": -2200,
+        "z": 0
+      }
+    },
+    {
+      "id": "theme_science",
+      "name": "Science",
+      "color": "#fbbf24",
+      "center": {
+        "x": 1200,
+        "y": 2200,
+        "z": 1200
+      }
+    },
+    {
+      "id": "theme_emotion",
+      "name": "Emotion",
+      "color": "#f472b6",
+      "center": {
+        "x": 1200,
+        "y": -2200,
+        "z": -1200
+      }
+    },
+    {
+      "id": "theme_action",
+      "name": "Action",
+      "color": "#fb923c",
+      "center": {
+        "x": 0,
+        "y": 0,
+        "z": 2500
+      }
+    }
+  ]
+}

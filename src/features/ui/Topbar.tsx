@@ -7,19 +7,20 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Orbit } from "lucide-react"
-
-export type MultiverseType = "clean" | "large"
+import type { UniverseConfig } from "@/types/universe"
 
 type TopbarProps = {
   selectedId: string | null
   stats: { nodes: number; links: number }
-  multiverse: MultiverseType
-  onMultiverseChange: (value: MultiverseType) => void
+  multiverse: string
+  universes: UniverseConfig[]
+  onMultiverseChange: (value: string) => void
 }
 
 export function Topbar({
   stats,
   multiverse,
+  universes,
   onMultiverseChange,
 }: TopbarProps) {
   return (
@@ -54,18 +55,17 @@ export function Topbar({
           </div>
           <Select
             value={multiverse}
-            onValueChange={(v) => onMultiverseChange(v as MultiverseType)}
+            onValueChange={onMultiverseChange}
           >
             <SelectTrigger className="w-[140px] h-8 bg-slate-950/50 border-slate-800 text-xs">
               <SelectValue placeholder="Select Universe" />
             </SelectTrigger>
             <SelectContent className="bg-slate-950 border-slate-800">
-              <SelectItem value="clean" className="text-xs">
-                Clean Universe (68)
-              </SelectItem>
-              <SelectItem value="large" className="text-xs">
-                Large Universe (200+)
-              </SelectItem>
+              {universes.map((u) => (
+                <SelectItem key={u.id} value={u.id} className="text-xs">
+                  {u.name}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
         </div>

@@ -3,7 +3,7 @@ import ForceGraph3D from "react-force-graph-3d"
 import type { ForceGraphMethods } from "react-force-graph-3d"
 import * as THREE from "three"
 import * as d3 from "d3-force-3d"
-import type { CelestialNode, CelestialLink } from "@/types/universe-v4"
+import type { CelestialNode, CelestialLink, GalaxyConfig } from "@/types/universe"
 import { useLODRenderer } from "./useLODRenderer"
 import { useCameraZoom } from "./useCameraZoom"
 import "./universe.css"
@@ -11,6 +11,7 @@ import "./universe.css"
 type UniverseViewProps = {
   nodes: CelestialNode[]
   links: CelestialLink[]
+  galaxies?: GalaxyConfig[]
   onSelectNode: (id: string) => void
   onBackgroundClick: () => void
   selectedId: string | null
@@ -19,6 +20,7 @@ type UniverseViewProps = {
 export function UniverseView({
   nodes,
   links,
+  galaxies = [],
   onSelectNode,
   onBackgroundClick,
   selectedId,
@@ -48,13 +50,11 @@ export function UniverseView({
     if (!scene) return
     sceneSetupDone.current = true
 
-    // 1. Lighting
     scene.add(new THREE.AmbientLight(0xffffff, 0.4))
     const dl = new THREE.DirectionalLight(0xffffff, 0.6)
     dl.position.set(1000, 1000, 1000)
     scene.add(dl)
 
-    // 2. Starfield (Atmosphere)
     const starsGeometry = new THREE.BufferGeometry()
     const starsCount = 6000
     const posArray = new Float32Array(starsCount * 3)
@@ -78,16 +78,13 @@ export function UniverseView({
     if (!sim || nodes.length === 0) return
 
     const timeout = setTimeout(() => {
-      const themeCenters: Record<string, { x: number; y: number; z: number }> = {
-        theme_abstract: { x: 0, y: 0, z: 0 },
-        theme_communication: { x: 2500, y: 0, z: 0 },
-        theme_education: { x: -1200, y: 2200, z: 0 },
-        theme_technology: { x: -1200, y: -2200, z: 0 },
-        theme_science: { x: 1200, y: 2200, z: 1200 },
-        theme_emotion: { x: 1200, y: -2200, z: -1200 },
-        theme_action: { x: 0, y: 0, z: 2500 },
-      }
+      // 1. Dynamic Galaxy Centers (NO HARDCODED FALLBACKS)
+      const galaxyCenters: Record<string, { x: number; y: number; z: number }> = {}
+      galaxies.forEach(g => {
+        galaxyCenters[g.id] = g.center
+      })
 
+      // 2. Physics Rules
       sim.d3Force("link", d3.forceLink(links)
         .id((d: any) => d.id)
         .distance((l: any) => {
@@ -112,27 +109,29 @@ export function UniverseView({
       sim.d3Force("x", d3.forceX((n: any) => {
         const node = n as CelestialNode
         const isStar = node.celestialType.includes("giant") || node.celestialType === "supergiant" || node.celestialType === "main_sequence"
-        return isStar ? (themeCenters[node.themeId]?.x || 0) : n.x
+        // Pull to galaxy center if defined, else stay at current x
+        return isStar ? (galaxyCenters[node.galaxyId]?.x ?? 0) : n.x
       }).strength((n: any) => (n as CelestialNode).celestialType.includes("giant") || (n as CelestialNode).celestialType === "supergiant" ? 0.4 : 0))
 
       sim.d3Force("y", d3.forceY((n: any) => {
         const node = n as CelestialNode
         const isStar = node.celestialType.includes("giant") || node.celestialType === "supergiant" || node.celestialType === "main_sequence"
-        return isStar ? (themeCenters[node.themeId]?.y || 0) : n.y
+        return isStar ? (galaxyCenters[node.galaxyId]?.y ?? 0) : n.y
       }).strength((n: any) => (n as CelestialNode).celestialType.includes("giant") || (n as CelestialNode).celestialType === "supergiant" ? 0.4 : 0))
 
       sim.d3Force("z", d3.forceZ((n: any) => {
         const node = n as CelestialNode
         const isStar = node.celestialType.includes("giant") || node.celestialType === "supergiant" || node.celestialType === "main_sequence"
-        return isStar ? (themeCenters[node.themeId]?.z || 0) : n.z
+        return isStar ? (galaxyCenters[node.galaxyId]?.z ?? 0) : n.z
       }).strength((n: any) => (n as CelestialNode).celestialType.includes("giant") || (n as CelestialNode).celestialType === "supergiant" ? 0.4 : 0))
 
       sim.d3Force("collide", d3.forceCollide().radius((n: any) => (n as CelestialNode).radius * 2).strength(0.7))
-      sim.d3VelocityDecay(0.3)
+      
+      if (typeof sim.d3VelocityDecay === 'function') sim.d3VelocityDecay(0.3)
       sim.d3ReheatSimulation()
     }, 100)
     return () => clearTimeout(timeout)
-  }, [nodes, links])
+  }, [nodes, links, galaxies])
 
   const performFocus = useCallback((nodeId: string) => {
     const fg = graphRef.current

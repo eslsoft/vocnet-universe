@@ -9,13 +9,23 @@
 // Backend Contract (Simple)
 // ==========================================
 
-export interface UniverseDataV4 {
+export interface UniverseData {
   version: "v4.0-static"
   meta: {
+    id?: string
+    name?: string
     generatedAt: number
     wordCount: number
   }
+  galaxies?: GalaxyConfig[]
   words: VocabWord[]
+}
+
+export interface GalaxyConfig {
+  id: string
+  name: string
+  color: string
+  center: { x: number; y: number; z: number }
 }
 
 export interface VocabWord {
@@ -36,14 +46,21 @@ export interface VocabWord {
   relations: VocabRelation[]
 
   // Grouping (for spatial clustering)
-  themeId: string               // "theme_communication"
-  subThemeId?: string           // Optional sub-theme
+  galaxyId: string              // "galaxy_tech"
+  solarSystemId?: string        // Optional sub-group
 }
 
 export interface VocabRelation {
   targetId: string
   type: "synonym" | "hypernym" | "hyponym" | "antonym" | "related"
   strength?: number             // 0-1, default 0.5
+}
+
+export interface UniverseConfig {
+  id: string
+  name: string
+  url: string
+  description?: string
 }
 
 // ==========================================
@@ -90,8 +107,8 @@ export interface CelestialNode {
   vz?: number
 
   // Grouping
-  themeId: string
-  subThemeId?: string
+  galaxyId: string
+  solarSystemId?: string
 
   // Relations (for interaction)
   relations: VocabRelation[]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "simple",
+    "name": "Simple Universe",
+    "url": "/data/universe_simple.json",
+    "description": "Hand-picked core vocabulary"
+  },
+  {
+    "id": "large",
+    "name": "Large Universe",
+    "url": "/data/universe_large.json",
+    "description": "Procedurally generated LOD test"
+  },
+  {
+    "id": "test",
+    "name": "Test",
+    "url": "/data/universe_test.json",
+    "description": "Semantic graph from LLM"
+  }
+]

@@ -8,7 +8,7 @@
 
 import { useCallback, useRef, useEffect } from "react"
 import * as THREE from "three"
-import type { CelestialNode } from "@/types/universe-v4"
+import type { CelestialNode } from "@/types/universe"
 import type { ForceGraphMethods } from "react-force-graph-3d"
 
 // Shared geometries (High performance)

@@ -3,7 +3,7 @@
  * Frontend-owned rules for mapping vocab attributes to celestial properties
  */
 
-import type { CelestialType, SpectralClass } from "@/types/universe-v4"
+import type { CelestialType, SpectralClass } from "@/types/universe"
 
 export const VISUAL_CONFIG = {
   // Spectral class color mapping (VIVID stellar colors for better contrast)
@@ -87,6 +87,6 @@ export const PLANET_COLORS: Record<string, string> = {
   theme_action: "#fb923c",        // Orange - energy
 }
 
-export function getPlanetColor(themeId: string): string {
-  return PLANET_COLORS[themeId] || "#9ca3af"
+export function getGalaxyColor(galaxyId: string): string {
+  return PLANET_COLORS[galaxyId] || "#9ca3af"
 }

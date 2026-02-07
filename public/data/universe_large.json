@@ -1,0 +1,6437 @@
+{
+  "version": "v4.0-large",
+  "meta": {
+    "generatedAt": 1770424708290,
+    "wordCount": 303
+  },
+  "words": [
+    {
+      "id": "word_0",
+      "word": "communication_star_0",
+      "frequency": 7838,
+      "firstRecordedYear": 1583,
+      "hierarchyLevel": 1,
+      "pos": "verb",
+      "definition": "Core communication concept",
+      "relations": [
+        {
+          "targetId": "word_1",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_2",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_3",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_4",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_5",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_6",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_7",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_1",
+      "word": "communication_0_planet_0",
+      "frequency": 3298,
+      "firstRecordedYear": 1607,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_0",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_2",
+      "word": "communication_0_planet_1tion",
+      "frequency": 960,
+      "firstRecordedYear": 1780,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_0",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_3",
+      "word": "communication_0_planet_2ing",
+      "frequency": 2523,
+      "firstRecordedYear": 1895,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_0",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_4",
+      "word": "communication_0_planet_3er",
+      "frequency": 1189,
+      "firstRecordedYear": 1424,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_0",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_5",
+      "word": "communication_0_planet_4ed",
+      "frequency": 3083,
+      "firstRecordedYear": 1486,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_0",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_6",
+      "word": "communication_0_planet_5ly",
+      "frequency": 914,
+      "firstRecordedYear": 1422,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_0",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_7",
+      "word": "communication_0_planet_6ness",
+      "frequency": 2930,
+      "firstRecordedYear": 1858,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_0",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_8",
+      "word": "communication_star_1",
+      "frequency": 3514,
+      "firstRecordedYear": 1200,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core communication concept",
+      "relations": [
+        {
+          "targetId": "word_9",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_10",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_11",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_12",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_13",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_14",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_15",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_16",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_17",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_18",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_19",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_20",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_9",
+      "word": "communication_1_planet_0",
+      "frequency": 3411,
+      "firstRecordedYear": 1889,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_8",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_10",
+      "word": "communication_1_planet_1tion",
+      "frequency": 2109,
+      "firstRecordedYear": 1897,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_8",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_11",
+      "word": "communication_1_planet_2ing",
+      "frequency": 2971,
+      "firstRecordedYear": 1955,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_8",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_12",
+      "word": "communication_1_planet_3er",
+      "frequency": 2058,
+      "firstRecordedYear": 1899,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_8",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_13",
+      "word": "communication_1_planet_4ed",
+      "frequency": 2757,
+      "firstRecordedYear": 1896,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_8",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_14",
+      "word": "communication_1_planet_5ly",
+      "frequency": 1119,
+      "firstRecordedYear": 1993,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_8",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_15",
+      "word": "communication_1_planet_6ness",
+      "frequency": 2071,
+      "firstRecordedYear": 1495,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_8",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_16",
+      "word": "communication_1_planet_7ment",
+      "frequency": 3289,
+      "firstRecordedYear": 1681,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_8",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_17",
+      "word": "communication_1_planet_8ity",
+      "frequency": 2260,
+      "firstRecordedYear": 1780,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_8",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_18",
+      "word": "communication_1_planet_9ism",
+      "frequency": 1310,
+      "firstRecordedYear": 1689,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_8",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_19",
+      "word": "communication_1_planet_10",
+      "frequency": 2913,
+      "firstRecordedYear": 1608,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_8",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_20",
+      "word": "communication_1_planet_11tion",
+      "frequency": 3518,
+      "firstRecordedYear": 1936,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_8",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_21",
+      "word": "communication_star_2",
+      "frequency": 7192,
+      "firstRecordedYear": 1569,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core communication concept",
+      "relations": [
+        {
+          "targetId": "word_22",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_23",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_24",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_25",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_26",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_27",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_28",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_29",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_30",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_31",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_32",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_33",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_22",
+      "word": "communication_2_planet_0",
+      "frequency": 3182,
+      "firstRecordedYear": 1641,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_21",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_23",
+      "word": "communication_2_planet_1tion",
+      "frequency": 3647,
+      "firstRecordedYear": 1608,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_21",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_24",
+      "word": "communication_2_planet_2ing",
+      "frequency": 3426,
+      "firstRecordedYear": 1763,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_21",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_25",
+      "word": "communication_2_planet_3er",
+      "frequency": 3549,
+      "firstRecordedYear": 1436,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_21",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_26",
+      "word": "communication_2_planet_4ed",
+      "frequency": 1997,
+      "firstRecordedYear": 1862,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_21",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_27",
+      "word": "communication_2_planet_5ly",
+      "frequency": 3324,
+      "firstRecordedYear": 1772,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_21",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_28",
+      "word": "communication_2_planet_6ness",
+      "frequency": 2597,
+      "firstRecordedYear": 1978,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_21",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_29",
+      "word": "communication_2_planet_7ment",
+      "frequency": 811,
+      "firstRecordedYear": 1899,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_21",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_30",
+      "word": "communication_2_planet_8ity",
+      "frequency": 3678,
+      "firstRecordedYear": 1625,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_21",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_31",
+      "word": "communication_2_planet_9ism",
+      "frequency": 1173,
+      "firstRecordedYear": 1461,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_21",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_32",
+      "word": "communication_2_planet_10",
+      "frequency": 3768,
+      "firstRecordedYear": 1630,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_21",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_33",
+      "word": "communication_2_planet_11tion",
+      "frequency": 2520,
+      "firstRecordedYear": 1481,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific communication term",
+      "relations": [
+        {
+          "targetId": "word_21",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_communication"
+    },
+    {
+      "id": "word_34",
+      "word": "education_star_0",
+      "frequency": 6907,
+      "firstRecordedYear": 1449,
+      "hierarchyLevel": 1,
+      "pos": "verb",
+      "definition": "Core education concept",
+      "relations": [
+        {
+          "targetId": "word_35",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_36",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_37",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_38",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_39",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_40",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_35",
+      "word": "education_0_planet_0",
+      "frequency": 2737,
+      "firstRecordedYear": 1470,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_34",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_36",
+      "word": "education_0_planet_1tion",
+      "frequency": 1460,
+      "firstRecordedYear": 1917,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_34",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_37",
+      "word": "education_0_planet_2ing",
+      "frequency": 3490,
+      "firstRecordedYear": 1915,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_34",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_38",
+      "word": "education_0_planet_3er",
+      "frequency": 2763,
+      "firstRecordedYear": 1539,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_34",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_39",
+      "word": "education_0_planet_4ed",
+      "frequency": 931,
+      "firstRecordedYear": 1663,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_34",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_40",
+      "word": "education_0_planet_5ly",
+      "frequency": 2319,
+      "firstRecordedYear": 1541,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_34",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_41",
+      "word": "education_star_1",
+      "frequency": 4588,
+      "firstRecordedYear": 1609,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core education concept",
+      "relations": [
+        {
+          "targetId": "word_42",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_43",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_44",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_45",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_46",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_47",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_48",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_49",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_42",
+      "word": "education_1_planet_0",
+      "frequency": 3592,
+      "firstRecordedYear": 1968,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_41",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_43",
+      "word": "education_1_planet_1tion",
+      "frequency": 3239,
+      "firstRecordedYear": 1840,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_41",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_44",
+      "word": "education_1_planet_2ing",
+      "frequency": 1936,
+      "firstRecordedYear": 1873,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_41",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_45",
+      "word": "education_1_planet_3er",
+      "frequency": 1522,
+      "firstRecordedYear": 1621,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_41",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_46",
+      "word": "education_1_planet_4ed",
+      "frequency": 3786,
+      "firstRecordedYear": 1857,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_41",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_47",
+      "word": "education_1_planet_5ly",
+      "frequency": 2667,
+      "firstRecordedYear": 1692,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_41",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_48",
+      "word": "education_1_planet_6ness",
+      "frequency": 1001,
+      "firstRecordedYear": 1478,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_41",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_49",
+      "word": "education_1_planet_7ment",
+      "frequency": 2571,
+      "firstRecordedYear": 1522,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_41",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_50",
+      "word": "education_star_2",
+      "frequency": 5815,
+      "firstRecordedYear": 1416,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core education concept",
+      "relations": [
+        {
+          "targetId": "word_51",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_52",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_53",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_54",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_55",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_56",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_57",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_58",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_59",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_60",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_51",
+      "word": "education_2_planet_0",
+      "frequency": 1394,
+      "firstRecordedYear": 1796,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_50",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_52",
+      "word": "education_2_planet_1tion",
+      "frequency": 1221,
+      "firstRecordedYear": 1496,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_50",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_53",
+      "word": "education_2_planet_2ing",
+      "frequency": 1643,
+      "firstRecordedYear": 1406,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_50",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_54",
+      "word": "education_2_planet_3er",
+      "frequency": 2182,
+      "firstRecordedYear": 1935,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_50",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_55",
+      "word": "education_2_planet_4ed",
+      "frequency": 2797,
+      "firstRecordedYear": 1666,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_50",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_56",
+      "word": "education_2_planet_5ly",
+      "frequency": 1334,
+      "firstRecordedYear": 1999,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_50",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_57",
+      "word": "education_2_planet_6ness",
+      "frequency": 1726,
+      "firstRecordedYear": 1614,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_50",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_58",
+      "word": "education_2_planet_7ment",
+      "frequency": 2243,
+      "firstRecordedYear": 1827,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_50",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_59",
+      "word": "education_2_planet_8ity",
+      "frequency": 2875,
+      "firstRecordedYear": 1651,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_50",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_60",
+      "word": "education_2_planet_9ism",
+      "frequency": 3020,
+      "firstRecordedYear": 1561,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_50",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_61",
+      "word": "education_star_3",
+      "frequency": 7180,
+      "firstRecordedYear": 1605,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core education concept",
+      "relations": [
+        {
+          "targetId": "word_62",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_63",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_64",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_65",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_66",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_67",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_68",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_69",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_70",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_71",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_72",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_62",
+      "word": "education_3_planet_0",
+      "frequency": 1588,
+      "firstRecordedYear": 1992,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_61",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_63",
+      "word": "education_3_planet_1tion",
+      "frequency": 2407,
+      "firstRecordedYear": 1643,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_61",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_64",
+      "word": "education_3_planet_2ing",
+      "frequency": 2160,
+      "firstRecordedYear": 1901,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_61",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_65",
+      "word": "education_3_planet_3er",
+      "frequency": 1761,
+      "firstRecordedYear": 1406,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_61",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_66",
+      "word": "education_3_planet_4ed",
+      "frequency": 1540,
+      "firstRecordedYear": 1489,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_61",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_67",
+      "word": "education_3_planet_5ly",
+      "frequency": 1058,
+      "firstRecordedYear": 1512,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_61",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_68",
+      "word": "education_3_planet_6ness",
+      "frequency": 1619,
+      "firstRecordedYear": 1956,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_61",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_69",
+      "word": "education_3_planet_7ment",
+      "frequency": 1337,
+      "firstRecordedYear": 1404,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_61",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_70",
+      "word": "education_3_planet_8ity",
+      "frequency": 2904,
+      "firstRecordedYear": 1519,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_61",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_71",
+      "word": "education_3_planet_9ism",
+      "frequency": 2919,
+      "firstRecordedYear": 1720,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_61",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_72",
+      "word": "education_3_planet_10",
+      "frequency": 1722,
+      "firstRecordedYear": 1646,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_61",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_73",
+      "word": "education_star_4",
+      "frequency": 4672,
+      "firstRecordedYear": 1511,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core education concept",
+      "relations": [
+        {
+          "targetId": "word_74",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_75",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_76",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_77",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_78",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_79",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_80",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_81",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_74",
+      "word": "education_4_planet_0",
+      "frequency": 815,
+      "firstRecordedYear": 1998,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_73",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_75",
+      "word": "education_4_planet_1tion",
+      "frequency": 3566,
+      "firstRecordedYear": 1815,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_73",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_76",
+      "word": "education_4_planet_2ing",
+      "frequency": 3242,
+      "firstRecordedYear": 1603,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_73",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_77",
+      "word": "education_4_planet_3er",
+      "frequency": 1803,
+      "firstRecordedYear": 1788,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_73",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_78",
+      "word": "education_4_planet_4ed",
+      "frequency": 2136,
+      "firstRecordedYear": 1508,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_73",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_79",
+      "word": "education_4_planet_5ly",
+      "frequency": 2346,
+      "firstRecordedYear": 1785,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_73",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_80",
+      "word": "education_4_planet_6ness",
+      "frequency": 2450,
+      "firstRecordedYear": 1838,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_73",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_81",
+      "word": "education_4_planet_7ment",
+      "frequency": 2282,
+      "firstRecordedYear": 1736,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific education term",
+      "relations": [
+        {
+          "targetId": "word_73",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_education"
+    },
+    {
+      "id": "word_82",
+      "word": "technology_star_0",
+      "frequency": 6240,
+      "firstRecordedYear": 1434,
+      "hierarchyLevel": 1,
+      "pos": "verb",
+      "definition": "Core technology concept",
+      "relations": [
+        {
+          "targetId": "word_83",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_84",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_85",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_86",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_87",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_88",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_89",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_90",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_91",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_92",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_83",
+      "word": "technology_0_planet_0",
+      "frequency": 1007,
+      "firstRecordedYear": 1719,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_82",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_84",
+      "word": "technology_0_planet_1tion",
+      "frequency": 974,
+      "firstRecordedYear": 1662,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_82",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_85",
+      "word": "technology_0_planet_2ing",
+      "frequency": 3662,
+      "firstRecordedYear": 1747,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_82",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_86",
+      "word": "technology_0_planet_3er",
+      "frequency": 2710,
+      "firstRecordedYear": 1607,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_82",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_87",
+      "word": "technology_0_planet_4ed",
+      "frequency": 1097,
+      "firstRecordedYear": 1561,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_82",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_88",
+      "word": "technology_0_planet_5ly",
+      "frequency": 3242,
+      "firstRecordedYear": 1826,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_82",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_89",
+      "word": "technology_0_planet_6ness",
+      "frequency": 832,
+      "firstRecordedYear": 1429,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_82",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_90",
+      "word": "technology_0_planet_7ment",
+      "frequency": 1891,
+      "firstRecordedYear": 1907,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_82",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_91",
+      "word": "technology_0_planet_8ity",
+      "frequency": 2588,
+      "firstRecordedYear": 1992,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_82",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_92",
+      "word": "technology_0_planet_9ism",
+      "frequency": 2737,
+      "firstRecordedYear": 1756,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_82",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_93",
+      "word": "technology_star_1",
+      "frequency": 7375,
+      "firstRecordedYear": 1462,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core technology concept",
+      "relations": [
+        {
+          "targetId": "word_94",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_95",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_96",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_97",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_98",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_99",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_100",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_101",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_102",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_103",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_94",
+      "word": "technology_1_planet_0",
+      "frequency": 3257,
+      "firstRecordedYear": 1938,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_93",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_95",
+      "word": "technology_1_planet_1tion",
+      "frequency": 1303,
+      "firstRecordedYear": 1787,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_93",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_96",
+      "word": "technology_1_planet_2ing",
+      "frequency": 882,
+      "firstRecordedYear": 1423,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_93",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_97",
+      "word": "technology_1_planet_3er",
+      "frequency": 1489,
+      "firstRecordedYear": 1461,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_93",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_98",
+      "word": "technology_1_planet_4ed",
+      "frequency": 3246,
+      "firstRecordedYear": 1833,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_93",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_99",
+      "word": "technology_1_planet_5ly",
+      "frequency": 1349,
+      "firstRecordedYear": 1782,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_93",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_100",
+      "word": "technology_1_planet_6ness",
+      "frequency": 3546,
+      "firstRecordedYear": 1988,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_93",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_101",
+      "word": "technology_1_planet_7ment",
+      "frequency": 2120,
+      "firstRecordedYear": 1746,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_93",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_102",
+      "word": "technology_1_planet_8ity",
+      "frequency": 2087,
+      "firstRecordedYear": 1855,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_93",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_103",
+      "word": "technology_1_planet_9ism",
+      "frequency": 1523,
+      "firstRecordedYear": 1574,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_93",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_104",
+      "word": "technology_star_2",
+      "frequency": 4366,
+      "firstRecordedYear": 1553,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core technology concept",
+      "relations": [
+        {
+          "targetId": "word_105",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_106",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_107",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_108",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_109",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_110",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_111",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_112",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_113",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_114",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_115",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_116",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_105",
+      "word": "technology_2_planet_0",
+      "frequency": 1379,
+      "firstRecordedYear": 1639,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_104",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_106",
+      "word": "technology_2_planet_1tion",
+      "frequency": 3040,
+      "firstRecordedYear": 1715,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_104",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_107",
+      "word": "technology_2_planet_2ing",
+      "frequency": 3640,
+      "firstRecordedYear": 1531,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_104",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_108",
+      "word": "technology_2_planet_3er",
+      "frequency": 3617,
+      "firstRecordedYear": 1490,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_104",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_109",
+      "word": "technology_2_planet_4ed",
+      "frequency": 1530,
+      "firstRecordedYear": 1870,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_104",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_110",
+      "word": "technology_2_planet_5ly",
+      "frequency": 2540,
+      "firstRecordedYear": 1658,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_104",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_111",
+      "word": "technology_2_planet_6ness",
+      "frequency": 3103,
+      "firstRecordedYear": 1677,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_104",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_112",
+      "word": "technology_2_planet_7ment",
+      "frequency": 2683,
+      "firstRecordedYear": 1619,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_104",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_113",
+      "word": "technology_2_planet_8ity",
+      "frequency": 3001,
+      "firstRecordedYear": 1631,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_104",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_114",
+      "word": "technology_2_planet_9ism",
+      "frequency": 2276,
+      "firstRecordedYear": 1487,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_104",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_115",
+      "word": "technology_2_planet_10",
+      "frequency": 1339,
+      "firstRecordedYear": 1934,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_104",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_116",
+      "word": "technology_2_planet_11tion",
+      "frequency": 3709,
+      "firstRecordedYear": 1762,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_104",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_117",
+      "word": "technology_star_3",
+      "frequency": 6454,
+      "firstRecordedYear": 1218,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core technology concept",
+      "relations": [
+        {
+          "targetId": "word_118",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_119",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_120",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_121",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_122",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_123",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_124",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_125",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_126",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_127",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_128",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_129",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_118",
+      "word": "technology_3_planet_0",
+      "frequency": 2784,
+      "firstRecordedYear": 1735,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_117",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_119",
+      "word": "technology_3_planet_1tion",
+      "frequency": 946,
+      "firstRecordedYear": 1418,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_117",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_120",
+      "word": "technology_3_planet_2ing",
+      "frequency": 983,
+      "firstRecordedYear": 1492,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_117",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_121",
+      "word": "technology_3_planet_3er",
+      "frequency": 2812,
+      "firstRecordedYear": 1907,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_117",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_122",
+      "word": "technology_3_planet_4ed",
+      "frequency": 1249,
+      "firstRecordedYear": 1689,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_117",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_123",
+      "word": "technology_3_planet_5ly",
+      "frequency": 1177,
+      "firstRecordedYear": 1459,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_117",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_124",
+      "word": "technology_3_planet_6ness",
+      "frequency": 3289,
+      "firstRecordedYear": 1528,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_117",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_125",
+      "word": "technology_3_planet_7ment",
+      "frequency": 3409,
+      "firstRecordedYear": 1758,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_117",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_126",
+      "word": "technology_3_planet_8ity",
+      "frequency": 971,
+      "firstRecordedYear": 1897,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_117",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_127",
+      "word": "technology_3_planet_9ism",
+      "frequency": 2947,
+      "firstRecordedYear": 1855,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_117",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_128",
+      "word": "technology_3_planet_10",
+      "frequency": 2574,
+      "firstRecordedYear": 1688,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_117",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_129",
+      "word": "technology_3_planet_11tion",
+      "frequency": 3325,
+      "firstRecordedYear": 1576,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_117",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_130",
+      "word": "technology_star_4",
+      "frequency": 7390,
+      "firstRecordedYear": 1289,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core technology concept",
+      "relations": [
+        {
+          "targetId": "word_131",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_132",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_133",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_134",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_135",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_136",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_137",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_131",
+      "word": "technology_4_planet_0",
+      "frequency": 2156,
+      "firstRecordedYear": 1415,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_130",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_132",
+      "word": "technology_4_planet_1tion",
+      "frequency": 3339,
+      "firstRecordedYear": 1827,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_130",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_133",
+      "word": "technology_4_planet_2ing",
+      "frequency": 2133,
+      "firstRecordedYear": 1611,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_130",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_134",
+      "word": "technology_4_planet_3er",
+      "frequency": 1205,
+      "firstRecordedYear": 1530,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_130",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_135",
+      "word": "technology_4_planet_4ed",
+      "frequency": 1863,
+      "firstRecordedYear": 1453,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_130",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_136",
+      "word": "technology_4_planet_5ly",
+      "frequency": 1765,
+      "firstRecordedYear": 1933,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_130",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_137",
+      "word": "technology_4_planet_6ness",
+      "frequency": 2659,
+      "firstRecordedYear": 1517,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific technology term",
+      "relations": [
+        {
+          "targetId": "word_130",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_technology"
+    },
+    {
+      "id": "word_138",
+      "word": "science_star_0",
+      "frequency": 5615,
+      "firstRecordedYear": 1342,
+      "hierarchyLevel": 1,
+      "pos": "verb",
+      "definition": "Core science concept",
+      "relations": [
+        {
+          "targetId": "word_139",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_140",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_141",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_142",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_143",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_144",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_139",
+      "word": "science_0_planet_0",
+      "frequency": 1566,
+      "firstRecordedYear": 1727,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific science term",
+      "relations": [
+        {
+          "targetId": "word_138",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_140",
+      "word": "science_0_planet_1tion",
+      "frequency": 2763,
+      "firstRecordedYear": 1418,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific science term",
+      "relations": [
+        {
+          "targetId": "word_138",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_141",
+      "word": "science_0_planet_2ing",
+      "frequency": 1047,
+      "firstRecordedYear": 1973,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific science term",
+      "relations": [
+        {
+          "targetId": "word_138",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_142",
+      "word": "science_0_planet_3er",
+      "frequency": 1391,
+      "firstRecordedYear": 1528,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific science term",
+      "relations": [
+        {
+          "targetId": "word_138",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_143",
+      "word": "science_0_planet_4ed",
+      "frequency": 2235,
+      "firstRecordedYear": 1538,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific science term",
+      "relations": [
+        {
+          "targetId": "word_138",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_144",
+      "word": "science_0_planet_5ly",
+      "frequency": 1380,
+      "firstRecordedYear": 1889,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific science term",
+      "relations": [
+        {
+          "targetId": "word_138",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_145",
+      "word": "science_star_1",
+      "frequency": 3592,
+      "firstRecordedYear": 1465,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core science concept",
+      "relations": [
+        {
+          "targetId": "word_146",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_147",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_148",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_149",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_150",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_151",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_152",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_153",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_146",
+      "word": "science_1_planet_0",
+      "frequency": 2047,
+      "firstRecordedYear": 1776,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific science term",
+      "relations": [
+        {
+          "targetId": "word_145",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_147",
+      "word": "science_1_planet_1tion",
+      "frequency": 3310,
+      "firstRecordedYear": 1644,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific science term",
+      "relations": [
+        {
+          "targetId": "word_145",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_148",
+      "word": "science_1_planet_2ing",
+      "frequency": 2053,
+      "firstRecordedYear": 1786,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific science term",
+      "relations": [
+        {
+          "targetId": "word_145",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_149",
+      "word": "science_1_planet_3er",
+      "frequency": 1784,
+      "firstRecordedYear": 1624,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific science term",
+      "relations": [
+        {
+          "targetId": "word_145",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_150",
+      "word": "science_1_planet_4ed",
+      "frequency": 820,
+      "firstRecordedYear": 1407,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific science term",
+      "relations": [
+        {
+          "targetId": "word_145",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_151",
+      "word": "science_1_planet_5ly",
+      "frequency": 2382,
+      "firstRecordedYear": 1815,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific science term",
+      "relations": [
+        {
+          "targetId": "word_145",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_152",
+      "word": "science_1_planet_6ness",
+      "frequency": 1630,
+      "firstRecordedYear": 1425,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific science term",
+      "relations": [
+        {
+          "targetId": "word_145",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_153",
+      "word": "science_1_planet_7ment",
+      "frequency": 941,
+      "firstRecordedYear": 1784,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific science term",
+      "relations": [
+        {
+          "targetId": "word_145",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_154",
+      "word": "science_star_2",
+      "frequency": 3776,
+      "firstRecordedYear": 1517,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core science concept",
+      "relations": [
+        {
+          "targetId": "word_155",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_156",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_157",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_158",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_159",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_160",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_161",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_162",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_155",
+      "word": "science_2_planet_0",
+      "frequency": 3636,
+      "firstRecordedYear": 1478,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific science term",
+      "relations": [
+        {
+          "targetId": "word_154",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_156",
+      "word": "science_2_planet_1tion",
+      "frequency": 2033,
+      "firstRecordedYear": 1438,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific science term",
+      "relations": [
+        {
+          "targetId": "word_154",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_157",
+      "word": "science_2_planet_2ing",
+      "frequency": 1786,
+      "firstRecordedYear": 1507,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific science term",
+      "relations": [
+        {
+          "targetId": "word_154",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_158",
+      "word": "science_2_planet_3er",
+      "frequency": 3709,
+      "firstRecordedYear": 1825,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific science term",
+      "relations": [
+        {
+          "targetId": "word_154",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_159",
+      "word": "science_2_planet_4ed",
+      "frequency": 3659,
+      "firstRecordedYear": 1713,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific science term",
+      "relations": [
+        {
+          "targetId": "word_154",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_160",
+      "word": "science_2_planet_5ly",
+      "frequency": 3414,
+      "firstRecordedYear": 1790,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific science term",
+      "relations": [
+        {
+          "targetId": "word_154",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_161",
+      "word": "science_2_planet_6ness",
+      "frequency": 1117,
+      "firstRecordedYear": 1594,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific science term",
+      "relations": [
+        {
+          "targetId": "word_154",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_162",
+      "word": "science_2_planet_7ment",
+      "frequency": 3195,
+      "firstRecordedYear": 1920,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific science term",
+      "relations": [
+        {
+          "targetId": "word_154",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_science"
+    },
+    {
+      "id": "word_163",
+      "word": "emotion_star_0",
+      "frequency": 6286,
+      "firstRecordedYear": 1262,
+      "hierarchyLevel": 1,
+      "pos": "verb",
+      "definition": "Core emotion concept",
+      "relations": [
+        {
+          "targetId": "word_164",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_165",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_166",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_167",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_168",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_169",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_170",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_171",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_172",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_164",
+      "word": "emotion_0_planet_0",
+      "frequency": 3377,
+      "firstRecordedYear": 1790,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_163",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_165",
+      "word": "emotion_0_planet_1tion",
+      "frequency": 3025,
+      "firstRecordedYear": 1419,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_163",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_166",
+      "word": "emotion_0_planet_2ing",
+      "frequency": 2179,
+      "firstRecordedYear": 1422,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_163",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_167",
+      "word": "emotion_0_planet_3er",
+      "frequency": 2422,
+      "firstRecordedYear": 1438,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_163",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_168",
+      "word": "emotion_0_planet_4ed",
+      "frequency": 895,
+      "firstRecordedYear": 1973,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_163",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_169",
+      "word": "emotion_0_planet_5ly",
+      "frequency": 3127,
+      "firstRecordedYear": 1417,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_163",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_170",
+      "word": "emotion_0_planet_6ness",
+      "frequency": 1107,
+      "firstRecordedYear": 1592,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_163",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_171",
+      "word": "emotion_0_planet_7ment",
+      "frequency": 1157,
+      "firstRecordedYear": 1908,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_163",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_172",
+      "word": "emotion_0_planet_8ity",
+      "frequency": 1015,
+      "firstRecordedYear": 1820,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_163",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_173",
+      "word": "emotion_star_1",
+      "frequency": 7792,
+      "firstRecordedYear": 1584,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core emotion concept",
+      "relations": [
+        {
+          "targetId": "word_174",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_175",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_176",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_177",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_178",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_179",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_180",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_181",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_182",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_183",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_184",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_185",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_174",
+      "word": "emotion_1_planet_0",
+      "frequency": 3365,
+      "firstRecordedYear": 1473,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_173",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_175",
+      "word": "emotion_1_planet_1tion",
+      "frequency": 1738,
+      "firstRecordedYear": 1653,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_173",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_176",
+      "word": "emotion_1_planet_2ing",
+      "frequency": 2143,
+      "firstRecordedYear": 1579,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_173",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_177",
+      "word": "emotion_1_planet_3er",
+      "frequency": 2062,
+      "firstRecordedYear": 1796,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_173",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_178",
+      "word": "emotion_1_planet_4ed",
+      "frequency": 2445,
+      "firstRecordedYear": 1405,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_173",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_179",
+      "word": "emotion_1_planet_5ly",
+      "frequency": 1412,
+      "firstRecordedYear": 1938,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_173",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_180",
+      "word": "emotion_1_planet_6ness",
+      "frequency": 3603,
+      "firstRecordedYear": 1966,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_173",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_181",
+      "word": "emotion_1_planet_7ment",
+      "frequency": 2520,
+      "firstRecordedYear": 1546,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_173",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_182",
+      "word": "emotion_1_planet_8ity",
+      "frequency": 2206,
+      "firstRecordedYear": 1745,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_173",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_183",
+      "word": "emotion_1_planet_9ism",
+      "frequency": 2867,
+      "firstRecordedYear": 1746,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_173",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_184",
+      "word": "emotion_1_planet_10",
+      "frequency": 2394,
+      "firstRecordedYear": 1826,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_173",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_185",
+      "word": "emotion_1_planet_11tion",
+      "frequency": 3120,
+      "firstRecordedYear": 1991,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_173",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_186",
+      "word": "emotion_star_2",
+      "frequency": 6574,
+      "firstRecordedYear": 1620,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core emotion concept",
+      "relations": [
+        {
+          "targetId": "word_187",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_188",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_189",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_190",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_191",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_192",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_193",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_194",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_195",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_187",
+      "word": "emotion_2_planet_0",
+      "frequency": 2923,
+      "firstRecordedYear": 1723,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_186",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_188",
+      "word": "emotion_2_planet_1tion",
+      "frequency": 2100,
+      "firstRecordedYear": 1409,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_186",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_189",
+      "word": "emotion_2_planet_2ing",
+      "frequency": 3487,
+      "firstRecordedYear": 1538,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_186",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_190",
+      "word": "emotion_2_planet_3er",
+      "frequency": 2523,
+      "firstRecordedYear": 1684,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_186",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_191",
+      "word": "emotion_2_planet_4ed",
+      "frequency": 1466,
+      "firstRecordedYear": 1945,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_186",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_192",
+      "word": "emotion_2_planet_5ly",
+      "frequency": 1609,
+      "firstRecordedYear": 1827,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_186",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_193",
+      "word": "emotion_2_planet_6ness",
+      "frequency": 1874,
+      "firstRecordedYear": 1529,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_186",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_194",
+      "word": "emotion_2_planet_7ment",
+      "frequency": 2598,
+      "firstRecordedYear": 1909,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_186",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_195",
+      "word": "emotion_2_planet_8ity",
+      "frequency": 3163,
+      "firstRecordedYear": 1750,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_186",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_196",
+      "word": "emotion_star_3",
+      "frequency": 4416,
+      "firstRecordedYear": 1203,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core emotion concept",
+      "relations": [
+        {
+          "targetId": "word_197",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_198",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_199",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_200",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_201",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_202",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_203",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_204",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_197",
+      "word": "emotion_3_planet_0",
+      "frequency": 923,
+      "firstRecordedYear": 1784,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_196",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_198",
+      "word": "emotion_3_planet_1tion",
+      "frequency": 1865,
+      "firstRecordedYear": 1547,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_196",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_199",
+      "word": "emotion_3_planet_2ing",
+      "frequency": 2439,
+      "firstRecordedYear": 1626,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_196",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_200",
+      "word": "emotion_3_planet_3er",
+      "frequency": 1128,
+      "firstRecordedYear": 1948,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_196",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_201",
+      "word": "emotion_3_planet_4ed",
+      "frequency": 2075,
+      "firstRecordedYear": 1799,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_196",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_202",
+      "word": "emotion_3_planet_5ly",
+      "frequency": 3134,
+      "firstRecordedYear": 1456,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_196",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_203",
+      "word": "emotion_3_planet_6ness",
+      "frequency": 1420,
+      "firstRecordedYear": 1791,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_196",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_204",
+      "word": "emotion_3_planet_7ment",
+      "frequency": 842,
+      "firstRecordedYear": 1803,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_196",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_205",
+      "word": "emotion_star_4",
+      "frequency": 5381,
+      "firstRecordedYear": 1541,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core emotion concept",
+      "relations": [
+        {
+          "targetId": "word_206",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_207",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_208",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_209",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_210",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_211",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_212",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_213",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_206",
+      "word": "emotion_4_planet_0",
+      "frequency": 3343,
+      "firstRecordedYear": 1622,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_205",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_207",
+      "word": "emotion_4_planet_1tion",
+      "frequency": 1515,
+      "firstRecordedYear": 1686,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_205",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_208",
+      "word": "emotion_4_planet_2ing",
+      "frequency": 2318,
+      "firstRecordedYear": 1784,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_205",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_209",
+      "word": "emotion_4_planet_3er",
+      "frequency": 2666,
+      "firstRecordedYear": 1407,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_205",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_210",
+      "word": "emotion_4_planet_4ed",
+      "frequency": 3399,
+      "firstRecordedYear": 1432,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_205",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_211",
+      "word": "emotion_4_planet_5ly",
+      "frequency": 1721,
+      "firstRecordedYear": 1603,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_205",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_212",
+      "word": "emotion_4_planet_6ness",
+      "frequency": 1633,
+      "firstRecordedYear": 1575,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_205",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_213",
+      "word": "emotion_4_planet_7ment",
+      "frequency": 1094,
+      "firstRecordedYear": 1942,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific emotion term",
+      "relations": [
+        {
+          "targetId": "word_205",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_emotion"
+    },
+    {
+      "id": "word_214",
+      "word": "action_star_0",
+      "frequency": 6950,
+      "firstRecordedYear": 1558,
+      "hierarchyLevel": 1,
+      "pos": "verb",
+      "definition": "Core action concept",
+      "relations": [
+        {
+          "targetId": "word_215",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_216",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_217",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_218",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_219",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_220",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_215",
+      "word": "action_0_planet_0",
+      "frequency": 3065,
+      "firstRecordedYear": 1559,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_214",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_216",
+      "word": "action_0_planet_1tion",
+      "frequency": 1390,
+      "firstRecordedYear": 1631,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_214",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_217",
+      "word": "action_0_planet_2ing",
+      "frequency": 1992,
+      "firstRecordedYear": 1856,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_214",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_218",
+      "word": "action_0_planet_3er",
+      "frequency": 2649,
+      "firstRecordedYear": 1553,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_214",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_219",
+      "word": "action_0_planet_4ed",
+      "frequency": 2751,
+      "firstRecordedYear": 1604,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_214",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_220",
+      "word": "action_0_planet_5ly",
+      "frequency": 1355,
+      "firstRecordedYear": 1531,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_214",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_221",
+      "word": "action_star_1",
+      "frequency": 7192,
+      "firstRecordedYear": 1467,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core action concept",
+      "relations": [
+        {
+          "targetId": "word_222",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_223",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_224",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_225",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_226",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_227",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_228",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_229",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_222",
+      "word": "action_1_planet_0",
+      "frequency": 2941,
+      "firstRecordedYear": 1913,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_221",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_223",
+      "word": "action_1_planet_1tion",
+      "frequency": 2450,
+      "firstRecordedYear": 1538,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_221",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_224",
+      "word": "action_1_planet_2ing",
+      "frequency": 2667,
+      "firstRecordedYear": 1984,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_221",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_225",
+      "word": "action_1_planet_3er",
+      "frequency": 3439,
+      "firstRecordedYear": 1522,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_221",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_226",
+      "word": "action_1_planet_4ed",
+      "frequency": 2338,
+      "firstRecordedYear": 1463,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_221",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_227",
+      "word": "action_1_planet_5ly",
+      "frequency": 1698,
+      "firstRecordedYear": 1840,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_221",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_228",
+      "word": "action_1_planet_6ness",
+      "frequency": 996,
+      "firstRecordedYear": 1568,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_221",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_229",
+      "word": "action_1_planet_7ment",
+      "frequency": 3389,
+      "firstRecordedYear": 1790,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_221",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_230",
+      "word": "action_star_2",
+      "frequency": 3294,
+      "firstRecordedYear": 1422,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core action concept",
+      "relations": [
+        {
+          "targetId": "word_231",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_232",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_233",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_234",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_235",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_236",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_237",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_238",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_231",
+      "word": "action_2_planet_0",
+      "frequency": 3173,
+      "firstRecordedYear": 1524,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_230",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_232",
+      "word": "action_2_planet_1tion",
+      "frequency": 2262,
+      "firstRecordedYear": 1656,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_230",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_233",
+      "word": "action_2_planet_2ing",
+      "frequency": 2812,
+      "firstRecordedYear": 1526,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_230",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_234",
+      "word": "action_2_planet_3er",
+      "frequency": 1248,
+      "firstRecordedYear": 1957,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_230",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_235",
+      "word": "action_2_planet_4ed",
+      "frequency": 2631,
+      "firstRecordedYear": 1576,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_230",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_236",
+      "word": "action_2_planet_5ly",
+      "frequency": 2228,
+      "firstRecordedYear": 1474,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_230",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_237",
+      "word": "action_2_planet_6ness",
+      "frequency": 3328,
+      "firstRecordedYear": 1856,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_230",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_238",
+      "word": "action_2_planet_7ment",
+      "frequency": 3379,
+      "firstRecordedYear": 1677,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_230",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_239",
+      "word": "action_star_3",
+      "frequency": 7476,
+      "firstRecordedYear": 1311,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core action concept",
+      "relations": [
+        {
+          "targetId": "word_240",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_241",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_242",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_243",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_244",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_245",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_240",
+      "word": "action_3_planet_0",
+      "frequency": 1960,
+      "firstRecordedYear": 1885,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_239",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_241",
+      "word": "action_3_planet_1tion",
+      "frequency": 1843,
+      "firstRecordedYear": 1519,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_239",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_242",
+      "word": "action_3_planet_2ing",
+      "frequency": 2614,
+      "firstRecordedYear": 1864,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_239",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_243",
+      "word": "action_3_planet_3er",
+      "frequency": 3118,
+      "firstRecordedYear": 1920,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_239",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_244",
+      "word": "action_3_planet_4ed",
+      "frequency": 3386,
+      "firstRecordedYear": 1405,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_239",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_245",
+      "word": "action_3_planet_5ly",
+      "frequency": 1049,
+      "firstRecordedYear": 1930,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_239",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_246",
+      "word": "action_star_4",
+      "frequency": 3067,
+      "firstRecordedYear": 1367,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core action concept",
+      "relations": [
+        {
+          "targetId": "word_247",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_248",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_249",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_250",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_251",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_252",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_253",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_247",
+      "word": "action_4_planet_0",
+      "frequency": 1459,
+      "firstRecordedYear": 1806,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_246",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_248",
+      "word": "action_4_planet_1tion",
+      "frequency": 1945,
+      "firstRecordedYear": 1672,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_246",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_249",
+      "word": "action_4_planet_2ing",
+      "frequency": 3677,
+      "firstRecordedYear": 1876,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_246",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_250",
+      "word": "action_4_planet_3er",
+      "frequency": 2572,
+      "firstRecordedYear": 1448,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_246",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_251",
+      "word": "action_4_planet_4ed",
+      "frequency": 1208,
+      "firstRecordedYear": 1623,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_246",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_252",
+      "word": "action_4_planet_5ly",
+      "frequency": 819,
+      "firstRecordedYear": 1866,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_246",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_253",
+      "word": "action_4_planet_6ness",
+      "frequency": 2677,
+      "firstRecordedYear": 1902,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific action term",
+      "relations": [
+        {
+          "targetId": "word_246",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_action"
+    },
+    {
+      "id": "word_254",
+      "word": "nature_star_0",
+      "frequency": 5224,
+      "firstRecordedYear": 1506,
+      "hierarchyLevel": 1,
+      "pos": "verb",
+      "definition": "Core nature concept",
+      "relations": [
+        {
+          "targetId": "word_255",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_256",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_257",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_258",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_259",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_260",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_261",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_255",
+      "word": "nature_0_planet_0",
+      "frequency": 2871,
+      "firstRecordedYear": 1866,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_254",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_256",
+      "word": "nature_0_planet_1tion",
+      "frequency": 2588,
+      "firstRecordedYear": 1963,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_254",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_257",
+      "word": "nature_0_planet_2ing",
+      "frequency": 2569,
+      "firstRecordedYear": 1769,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_254",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_258",
+      "word": "nature_0_planet_3er",
+      "frequency": 2372,
+      "firstRecordedYear": 1819,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_254",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_259",
+      "word": "nature_0_planet_4ed",
+      "frequency": 3393,
+      "firstRecordedYear": 1426,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_254",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_260",
+      "word": "nature_0_planet_5ly",
+      "frequency": 2493,
+      "firstRecordedYear": 1960,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_254",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_261",
+      "word": "nature_0_planet_6ness",
+      "frequency": 2602,
+      "firstRecordedYear": 1848,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_254",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_262",
+      "word": "nature_star_1",
+      "frequency": 3849,
+      "firstRecordedYear": 1434,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core nature concept",
+      "relations": [
+        {
+          "targetId": "word_263",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_264",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_265",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_266",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_267",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_268",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_269",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_263",
+      "word": "nature_1_planet_0",
+      "frequency": 3222,
+      "firstRecordedYear": 1466,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_262",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_264",
+      "word": "nature_1_planet_1tion",
+      "frequency": 2251,
+      "firstRecordedYear": 1922,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_262",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_265",
+      "word": "nature_1_planet_2ing",
+      "frequency": 2802,
+      "firstRecordedYear": 1557,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_262",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_266",
+      "word": "nature_1_planet_3er",
+      "frequency": 3016,
+      "firstRecordedYear": 1813,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_262",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_267",
+      "word": "nature_1_planet_4ed",
+      "frequency": 2139,
+      "firstRecordedYear": 1706,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_262",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_268",
+      "word": "nature_1_planet_5ly",
+      "frequency": 1577,
+      "firstRecordedYear": 1835,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_262",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_269",
+      "word": "nature_1_planet_6ness",
+      "frequency": 3154,
+      "firstRecordedYear": 1507,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_262",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_270",
+      "word": "nature_star_2",
+      "frequency": 6482,
+      "firstRecordedYear": 1650,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core nature concept",
+      "relations": [
+        {
+          "targetId": "word_271",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_272",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_273",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_274",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_275",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_276",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_277",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_278",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_279",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_280",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_281",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_271",
+      "word": "nature_2_planet_0",
+      "frequency": 3157,
+      "firstRecordedYear": 1787,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_270",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_272",
+      "word": "nature_2_planet_1tion",
+      "frequency": 1754,
+      "firstRecordedYear": 1900,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_270",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_273",
+      "word": "nature_2_planet_2ing",
+      "frequency": 3341,
+      "firstRecordedYear": 1658,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_270",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_274",
+      "word": "nature_2_planet_3er",
+      "frequency": 3502,
+      "firstRecordedYear": 1737,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_270",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_275",
+      "word": "nature_2_planet_4ed",
+      "frequency": 3005,
+      "firstRecordedYear": 1515,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_270",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_276",
+      "word": "nature_2_planet_5ly",
+      "frequency": 3646,
+      "firstRecordedYear": 1438,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_270",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_277",
+      "word": "nature_2_planet_6ness",
+      "frequency": 911,
+      "firstRecordedYear": 1529,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_270",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_278",
+      "word": "nature_2_planet_7ment",
+      "frequency": 3310,
+      "firstRecordedYear": 1878,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_270",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_279",
+      "word": "nature_2_planet_8ity",
+      "frequency": 1771,
+      "firstRecordedYear": 1505,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_270",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_280",
+      "word": "nature_2_planet_9ism",
+      "frequency": 1206,
+      "firstRecordedYear": 1685,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_270",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_281",
+      "word": "nature_2_planet_10",
+      "frequency": 3385,
+      "firstRecordedYear": 1784,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_270",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_282",
+      "word": "nature_star_3",
+      "frequency": 4362,
+      "firstRecordedYear": 1610,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core nature concept",
+      "relations": [
+        {
+          "targetId": "word_283",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_284",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_285",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_286",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_287",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_288",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_289",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_290",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_291",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_283",
+      "word": "nature_3_planet_0",
+      "frequency": 1651,
+      "firstRecordedYear": 1854,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_282",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_284",
+      "word": "nature_3_planet_1tion",
+      "frequency": 1662,
+      "firstRecordedYear": 1437,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_282",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_285",
+      "word": "nature_3_planet_2ing",
+      "frequency": 1412,
+      "firstRecordedYear": 1640,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_282",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_286",
+      "word": "nature_3_planet_3er",
+      "frequency": 3472,
+      "firstRecordedYear": 1428,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_282",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_287",
+      "word": "nature_3_planet_4ed",
+      "frequency": 3348,
+      "firstRecordedYear": 1525,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_282",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_288",
+      "word": "nature_3_planet_5ly",
+      "frequency": 3610,
+      "firstRecordedYear": 1475,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_282",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_289",
+      "word": "nature_3_planet_6ness",
+      "frequency": 2739,
+      "firstRecordedYear": 1705,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_282",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_290",
+      "word": "nature_3_planet_7ment",
+      "frequency": 939,
+      "firstRecordedYear": 1658,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_282",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_291",
+      "word": "nature_3_planet_8ity",
+      "frequency": 2750,
+      "firstRecordedYear": 1441,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_282",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_292",
+      "word": "nature_star_4",
+      "frequency": 3363,
+      "firstRecordedYear": 1439,
+      "hierarchyLevel": 2,
+      "pos": "verb",
+      "definition": "Core nature concept",
+      "relations": [
+        {
+          "targetId": "word_293",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_294",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_295",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_296",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_297",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_298",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_299",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_300",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_301",
+          "type": "hyponym",
+          "strength": 1
+        },
+        {
+          "targetId": "word_302",
+          "type": "hyponym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_293",
+      "word": "nature_4_planet_0",
+      "frequency": 2745,
+      "firstRecordedYear": 1583,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_292",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_294",
+      "word": "nature_4_planet_1tion",
+      "frequency": 815,
+      "firstRecordedYear": 1630,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_292",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_295",
+      "word": "nature_4_planet_2ing",
+      "frequency": 1671,
+      "firstRecordedYear": 1546,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_292",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_296",
+      "word": "nature_4_planet_3er",
+      "frequency": 1841,
+      "firstRecordedYear": 1523,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_292",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_297",
+      "word": "nature_4_planet_4ed",
+      "frequency": 1294,
+      "firstRecordedYear": 1620,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_292",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_298",
+      "word": "nature_4_planet_5ly",
+      "frequency": 2285,
+      "firstRecordedYear": 1532,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_292",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_299",
+      "word": "nature_4_planet_6ness",
+      "frequency": 1071,
+      "firstRecordedYear": 1961,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_292",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_300",
+      "word": "nature_4_planet_7ment",
+      "frequency": 1431,
+      "firstRecordedYear": 1489,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_292",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_301",
+      "word": "nature_4_planet_8ity",
+      "frequency": 2940,
+      "firstRecordedYear": 1652,
+      "hierarchyLevel": 4,
+      "pos": "verb",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_292",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    },
+    {
+      "id": "word_302",
+      "word": "nature_4_planet_9ism",
+      "frequency": 1962,
+      "firstRecordedYear": 1820,
+      "hierarchyLevel": 4,
+      "pos": "noun",
+      "definition": "Specific nature term",
+      "relations": [
+        {
+          "targetId": "word_292",
+          "type": "hypernym",
+          "strength": 1
+        }
+      ],
+      "galaxyId": "theme_nature"
+    }
+  ],
+  "galaxies": [
+    {
+      "id": "theme_abstract",
+      "name": "Abstract",
+      "color": "#9ca3af",
+      "center": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "id": "theme_communication",
+      "name": "Communication",
+      "color": "#60a5fa",
+      "center": {
+        "x": 2500,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "id": "theme_education",
+      "name": "Education",
+      "color": "#34d399",
+      "center": {
+        "x": -1200,
+        "y": 2200,
+        "z": 0
+      }
+    },
+    {
+      "id": "theme_technology",
+      "name": "Technology",
+      "color": "#a78bfa",
+      "center": {
+        "x": -1200,
+        "y": -2200,
+        "z": 0
+      }
+    },
+    {
+      "id": "theme_science",
+      "name": "Science",
+      "color": "#fbbf24",
+      "center": {
+        "x": 1200,
+        "y": 2200,
+        "z": 1200
+      }
+    },
+    {
+      "id": "theme_emotion",
+      "name": "Emotion",
+      "color": "#f472b6",
+      "center": {
+        "x": 1200,
+        "y": -2200,
+        "z": -1200
+      }
+    },
+    {
+      "id": "theme_action",
+      "name": "Action",
+      "color": "#fb923c",
+      "center": {
+        "x": 0,
+        "y": 0,
+        "z": 2500
+      }
+    }
+  ]
+}

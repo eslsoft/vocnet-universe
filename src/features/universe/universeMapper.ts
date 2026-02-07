@@ -9,8 +9,8 @@ import type {
   CelestialType,
   SpectralClass,
   CelestialLink,
-} from "@/types/universe-v4"
-import { VISUAL_CONFIG, getSpectralColor, getBaseSize, getPlanetColor } from "./visualConfig"
+} from "@/types/universe"
+import { VISUAL_CONFIG, getSpectralColor, getBaseSize, getGalaxyColor } from "./visualConfig"
 
 export class UniverseMapper {
   /**
@@ -108,7 +108,7 @@ export class UniverseMapper {
       color = getSpectralColor(spectralClass)
     } else {
       // Planets use theme-based colors
-      color = getPlanetColor(word.themeId)
+      color = getGalaxyColor(word.galaxyId)
       spectralClass = "G" // Placeholder, not used for planets
     }
 
@@ -130,8 +130,8 @@ export class UniverseMapper {
       radius,
       luminosity,
       mass,
-      themeId: word.themeId,
-      subThemeId: word.subThemeId,
+      galaxyId: word.galaxyId,
+      solarSystemId: word.solarSystemId,
       relations: word.relations,
     }
   }
