@@ -1,5 +1,11 @@
 [
   {
+    "id": "demo",
+    "name": "🆕 Demo Universe (New Framework)",
+    "url": "/data/universe_test_demo.json",
+    "description": "Built with new modular framework - 45 words across 5 themes"
+  },
+  {
     "id": "simple",
     "name": "Simple Universe",
     "url": "/data/universe_simple.json",
