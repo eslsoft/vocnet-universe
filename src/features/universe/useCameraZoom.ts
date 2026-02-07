@@ -1,12 +1,14 @@
 import { useEffect, useRef } from "react"
 import type { ForceGraphMethods } from "react-force-graph-3d"
+import type { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
+import type { CelestialNode, CelestialLink } from "@/types/universe"
 
 /**
  * Zero-React-render zoom tracking.
  * Writes directly to a DOM element via ref — never calls setState.
  */
 export function useCameraZoom(
-  graphRef: React.RefObject<ForceGraphMethods | undefined>,
+  graphRef: React.RefObject<ForceGraphMethods<CelestialNode, CelestialLink> | undefined>,
   zoomRef: React.RefObject<HTMLSpanElement | null>,
 ) {
   const lastValue = useRef("")
@@ -17,8 +19,7 @@ export function useCameraZoom(
       const fg = graphRef.current
       if (fg) {
         const cam = fg.camera()
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const controls = fg.controls() as any
+        const controls = fg.controls() as OrbitControls | null
         if (controls?.target) {
           const d = cam.position.distanceTo(controls.target)
           const pct = Math.max(10, Math.min(2000, Math.round((2500 / d) * 100)))

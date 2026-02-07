@@ -8,7 +8,7 @@
 
 import { useCallback, useRef, useEffect } from "react"
 import * as THREE from "three"
-import type { CelestialNode } from "@/types/universe"
+import type { CelestialNode, CelestialLink } from "@/types/universe"
 import type { ForceGraphMethods } from "react-force-graph-3d"
 
 // Shared geometries (High performance)
@@ -26,7 +26,7 @@ const FADE_CONFIG = {
 }
 
 export function useLODRenderer(
-  graphRef: React.RefObject<ForceGraphMethods | undefined>,
+  graphRef: React.RefObject<ForceGraphMethods<CelestialNode, CelestialLink> | undefined>,
   selectedId: string | null,
   neighborIds: Set<string>
 ) {
@@ -170,33 +170,35 @@ export function useLODRenderer(
 
     group.visible = bodyOpacity > 0 || isStar || isSelected || isNeighbor
     
-    // Efficient property assignment
-    for (let i = 0; i < group.children.length; i++) {
-      const child = group.children[i] as any
-      if (child.name === "body") {
-        child.material.opacity = bodyOpacity
-        child.scale.setScalar(n.radius * scaleMult)
-      } else if (child.name === "label") {
-        child.material.opacity = labelOpacity
-        child.visible = labelOpacity > 0
-      } else if (child.name === "glow") {
-        const glowAlpha = isStar ? THREE.MathUtils.clamp(1 - dist / 2000, 0, 0.25) : 0
-        child.material.opacity = glowAlpha
-        child.visible = glowAlpha > 0
-      } else if (child.name === "selectionRing") {
-        const ringAlpha = isSelected ? 0.8 : 0
-        child.material.opacity = ringAlpha
-        child.visible = ringAlpha > 0
+    group.children.forEach((child) => {
+      if (child instanceof THREE.Mesh || child instanceof THREE.Sprite) {
+        const material = child.material as THREE.Material
+        if (child.name === "body") {
+          material.opacity = bodyOpacity
+          child.scale.setScalar(n.radius * scaleMult)
+        } else if (child.name === "label") {
+          material.opacity = labelOpacity
+          child.visible = labelOpacity > 0
+        } else if (child.name === "glow") {
+          const glowAlpha = isStar ? THREE.MathUtils.clamp(1 - dist / 2000, 0, 0.25) : 0
+          material.opacity = glowAlpha
+          child.visible = glowAlpha > 0
+        } else if (child.name === "selectionRing") {
+          const ringAlpha = isSelected ? 0.8 : 0
+          material.opacity = ringAlpha
+          child.visible = ringAlpha > 0
+        }
       }
-    }
+    })
   }, [])
 
   // Optimized Loop
   useEffect(() => {
     let rafId: number
     const updateSlice = () => {
-      if (!graphRef.current) { rafId = requestAnimationFrame(updateSlice); return }
-      const camera = graphRef.current.camera()
+      const fg = graphRef.current
+      if (!fg) { rafId = requestAnimationFrame(updateSlice); return }
+      const camera = fg.camera()
       if (!camera) { rafId = requestAnimationFrame(updateSlice); return }
 
       const camPos = camera.position
@@ -217,18 +219,18 @@ export function useLODRenderer(
 
   // Selection change handling
   useEffect(() => {
-    if (!graphRef.current) return
-    const camera = graphRef.current.camera()
+    const fg = graphRef.current
+    if (!fg) return
+    const camera = fg.camera()
     if (!camera) return
     const camPos = camera.position
-    // Force instant update for all nodes to catch neighbors
     nodeIdsRef.current.forEach(id => {
       updateNodeAttributes(id, camPos, selectedId, neighborIds)
     })
     sliceIndexRef.current = 0
   }, [selectedId, neighborIds, updateNodeAttributes, graphRef])
 
-  const nodeThreeObject = useCallback((node: any) => {
+  const nodeThreeObject = useCallback((node: object) => {
     const n = node as CelestialNode
     if (!nodeDataRef.current.has(n.id)) {
       nodeDataRef.current.set(n.id, n)

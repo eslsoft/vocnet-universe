@@ -1,13 +1,9 @@
 /**
  * VOCNET UNIVERSE V4 - Simplified Backend Contract
- *
+ * 
  * Backend provides simple vocab attributes.
  * Frontend handles all celestial mapping & visualization.
  */
-
-// ==========================================
-// Backend Contract (Simple)
-// ==========================================
 
 export interface UniverseData {
   version: "v4.0-static"
@@ -30,8 +26,8 @@ export interface GalaxyConfig {
 
 export interface VocabWord {
   // Identity
-  id: string                    // "word_speak"
-  word: string                  // "speak"
+  id: string                    // e.g., "word_speak"
+  word: string                  // e.g., "speak"
 
   // Core Attributes (Backend analyzes)
   frequency: number             // Usage frequency (1-10000)
@@ -92,7 +88,7 @@ export interface CelestialNode {
   celestialType: CelestialType
   spectralClass: SpectralClass
 
-  // Visual attributes (computed by frontend)
+  // Visual attributes
   color: string               // Mapped from spectralClass
   radius: number              // Computed from frequency + type
   luminosity: number          // Computed from frequency + level
@@ -119,13 +115,4 @@ export interface CelestialLink {
   target: string | CelestialNode
   type: string
   strength: number
-}
-
-// ==========================================
-// Schema (for backward compatibility)
-// ==========================================
-
-export interface UniverseSchema {
-  levels: Record<number, { name: string; color: string }>
-  linkTypes: Record<string, { label: string; color: string }>
 }

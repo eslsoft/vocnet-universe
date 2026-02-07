@@ -1,12 +1,14 @@
 import { useEffect, useRef, useCallback, useMemo } from "react"
 import ForceGraph3D from "react-force-graph-3d"
-import type { ForceGraphMethods } from "react-force-graph-3d"
+import type { ForceGraphMethods, NodeObject } from "react-force-graph-3d"
 import * as THREE from "three"
 import * as d3 from "d3-force-3d"
 import type { CelestialNode, CelestialLink, GalaxyConfig } from "@/types/universe"
 import { useLODRenderer } from "./useLODRenderer"
 import { useCameraZoom } from "./useCameraZoom"
 import "./universe.css"
+
+type D3Node = NodeObject<CelestialNode>;
 
 type UniverseViewProps = {
   nodes: CelestialNode[]
@@ -25,7 +27,7 @@ export function UniverseView({
   onBackgroundClick,
   selectedId,
 }: UniverseViewProps) {
-  const graphRef = useRef<ForceGraphMethods>(undefined)
+  const graphRef = useRef<ForceGraphMethods<CelestialNode, CelestialLink>>(undefined)
   const zoomRef = useRef<HTMLSpanElement | null>(null)
   const sceneSetupDone = useRef(false)
 
@@ -73,62 +75,67 @@ export function UniverseView({
     scene.add(starField)
   }, [])
 
+  // --- PHYSICS SIMULATION SETUP ---
   useEffect(() => {
-    const sim = graphRef.current
-    if (!sim || nodes.length === 0) return
+    const fg = graphRef.current
+    if (!fg || nodes.length === 0) return
 
     const timeout = setTimeout(() => {
-      // 1. Dynamic Galaxy Centers (NO HARDCODED FALLBACKS)
       const galaxyCenters: Record<string, { x: number; y: number; z: number }> = {}
       galaxies.forEach(g => {
         galaxyCenters[g.id] = g.center
       })
 
-      // 2. Physics Rules
-      sim.d3Force("link", d3.forceLink(links)
-        .id((d: any) => d.id)
-        .distance((l: any) => {
-          if (l.type === "hypernym") {
-            const source = nodes.find(n => n.id === (typeof l.source === 'string' ? l.source : l.source.id))
-            const target = nodes.find(n => n.id === (typeof l.target === 'string' ? l.target : l.target.id))
-            if (source?.celestialType.includes('giant') && target?.celestialType === 'supergiant') return 1000
-            return 400
-          }
-          return 600
+      const linkForce = d3.forceLink<D3Node, CelestialLink>(links)
+        .id((d: D3Node) => d.id as string)
+        .distance((l: CelestialLink) => {
+          const s = typeof l.source === 'object' ? l.source : nodes.find(n => n.id === l.source)
+          const t = typeof l.target === 'object' ? l.target : nodes.find(n => n.id === l.target)
+          if (s?.celestialType.includes('giant') && t?.celestialType === 'supergiant') return 1000
+          return 400
         })
-        .strength((l: any) => l.type === "hypernym" ? 1 : 0.1)
-      )
+        .strength((l: CelestialLink) => l.type === "hypernym" ? 1 : 0.1)
+      fg.d3Force("link", linkForce)
 
-      sim.d3Force("charge", d3.forceManyBody().strength((n: any) => {
-        const node = n as CelestialNode
-        if (node.celestialType === "supergiant") return -25000
-        if (node.celestialType.includes("giant")) return -10000
-        return -800 
-      }).distanceMax(2000))
+      const chargeForce = d3.forceManyBody<D3Node>()
+        .strength((node: D3Node) => {
+          if (node.celestialType === "supergiant") return -25000
+          if (node.celestialType.includes("giant")) return -10000
+          return -800 
+        })
+        .distanceMax(2000)
+      fg.d3Force("charge", chargeForce)
 
-      sim.d3Force("x", d3.forceX((n: any) => {
-        const node = n as CelestialNode
-        const isStar = node.celestialType.includes("giant") || node.celestialType === "supergiant" || node.celestialType === "main_sequence"
-        // Pull to galaxy center if defined, else stay at current x
-        return isStar ? (galaxyCenters[node.galaxyId]?.x ?? 0) : n.x
-      }).strength((n: any) => (n as CelestialNode).celestialType.includes("giant") || (n as CelestialNode).celestialType === "supergiant" ? 0.4 : 0))
+      const xForce = d3.forceX<D3Node>()
+        .x((node: D3Node) => {
+          const isStar = node.celestialType.includes("giant") || node.celestialType === "supergiant" || node.celestialType === "main_sequence"
+          return isStar ? (galaxyCenters[node.galaxyId]?.x ?? 0) : (node.x ?? 0)
+        })
+        .strength((node: D3Node) => node.celestialType.includes("giant") || node.celestialType === "supergiant" ? 0.4 : 0)
+      fg.d3Force("x", xForce)
 
-      sim.d3Force("y", d3.forceY((n: any) => {
-        const node = n as CelestialNode
-        const isStar = node.celestialType.includes("giant") || node.celestialType === "supergiant" || node.celestialType === "main_sequence"
-        return isStar ? (galaxyCenters[node.galaxyId]?.y ?? 0) : n.y
-      }).strength((n: any) => (n as CelestialNode).celestialType.includes("giant") || (n as CelestialNode).celestialType === "supergiant" ? 0.4 : 0))
+      const yForce = d3.forceY<D3Node>()
+        .y((node: D3Node) => {
+          const isStar = node.celestialType.includes("giant") || node.celestialType === "supergiant" || node.celestialType === "main_sequence"
+          return isStar ? (galaxyCenters[node.galaxyId]?.y ?? 0) : (node.y ?? 0)
+        })
+        .strength((node: D3Node) => node.celestialType.includes("giant") || node.celestialType === "supergiant" ? 0.4 : 0)
+      fg.d3Force("y", yForce)
 
-      sim.d3Force("z", d3.forceZ((n: any) => {
-        const node = n as CelestialNode
-        const isStar = node.celestialType.includes("giant") || node.celestialType === "supergiant" || node.celestialType === "main_sequence"
-        return isStar ? (galaxyCenters[node.galaxyId]?.z ?? 0) : n.z
-      }).strength((n: any) => (n as CelestialNode).celestialType.includes("giant") || (n as CelestialNode).celestialType === "supergiant" ? 0.4 : 0))
+      const zForce = d3.forceZ<D3Node>()
+        .z((node: D3Node) => {
+          const isStar = node.celestialType.includes("giant") || node.celestialType === "supergiant" || node.celestialType === "main_sequence"
+          return isStar ? (galaxyCenters[node.galaxyId]?.z ?? 0) : (node.z ?? 0)
+        })
+        .strength((node: D3Node) => node.celestialType.includes("giant") || node.celestialType === "supergiant" ? 0.4 : 0)
+      fg.d3Force("z", zForce)
 
-      sim.d3Force("collide", d3.forceCollide().radius((n: any) => (n as CelestialNode).radius * 2).strength(0.7))
+      const collideForce = d3.forceCollide<D3Node>()
+        .radius((node: D3Node) => node.radius * 2)
+        .strength(0.7)
+      fg.d3Force("collide", collideForce)
       
-      if (typeof sim.d3VelocityDecay === 'function') sim.d3VelocityDecay(0.3)
-      sim.d3ReheatSimulation()
+      fg.d3ReheatSimulation()
     }, 100)
     return () => clearTimeout(timeout)
   }, [nodes, links, galaxies])
@@ -137,13 +144,31 @@ export function UniverseView({
     const fg = graphRef.current
     if (!fg) return
     const node = nodes.find((n) => n.id === nodeId)
-    if (!node || node.x === undefined) return
-    const camera = fg.camera(); const currentPos = camera.position
-    const direction = new THREE.Vector3(currentPos.x - node.x, currentPos.y - node.y, currentPos.z - node.z).normalize()
+    if (!node || node.x === undefined || node.y === undefined || node.z === undefined) return
+    
+    const camera = fg.camera()
+    const currentPos = camera.position
+    
+    const direction = new THREE.Vector3(
+      currentPos.x - node.x, 
+      currentPos.y - node.y, 
+      currentPos.z - node.z
+    ).normalize()
+    
     const isStar = node.celestialType.includes("giant") || node.celestialType === "supergiant" || node.celestialType === "main_sequence"
     let distance = node.radius * 10
-    if (isStar) distance = Math.max(distance, 600); else distance = Math.max(distance, 300)
-    fg.cameraPosition({ x: node.x + direction.x * distance, y: node.y + direction.y * distance + (distance * 0.2), z: node.z + direction.z * distance }, { x: node.x, y: node.y, z: node.z }, 1200)
+    if (isStar) distance = Math.max(distance, 600)
+    else distance = Math.max(distance, 300)
+
+    fg.cameraPosition(
+      { 
+        x: node.x + direction.x * distance, 
+        y: node.y + direction.y * distance + (distance * 0.2), 
+        z: node.z + direction.z * distance 
+      }, 
+      { x: node.x, y: node.y, z: node.z }, 
+      1200
+    )
   }, [nodes])
 
   useEffect(() => {
@@ -161,15 +186,15 @@ export function UniverseView({
   }, [])
 
   const getLinkColor = useCallback((link: CelestialLink) => {
-    const sId = typeof link.source === "string" ? link.source : link.source.id
-    const tId = typeof link.target === "string" ? link.target : link.target.id
+    const sId = typeof link.source === "object" ? link.source.id : link.source
+    const tId = typeof link.target === "object" ? link.target.id : link.target
+    
     if (selectedId && (sId === selectedId || tId === selectedId)) return "#fbbf24"
     
-    // Check if it's a "backbone" link (between major stars)
     const s = nodes.find(n => n.id === sId)
     const t = nodes.find(n => n.id === tId)
-    const isBackbone = (s?.celestialType === 'supergiant' || s?.celestialType.includes('giant')) && 
-                       (t?.celestialType === 'supergiant' || t?.celestialType.includes('giant'))
+    const isBackbone = (s?.celestialType === 'supergiant' || s?.celestialType?.includes('giant')) && 
+                       (t?.celestialType === 'supergiant' || t?.celestialType?.includes('giant'))
     
     return isBackbone ? "rgba(71, 85, 105, 0.4)" : "rgba(30, 41, 59, 0.1)"
   }, [selectedId, nodes])
@@ -185,32 +210,32 @@ export function UniverseView({
         graphData={{ nodes, links }}
         backgroundColor="#020617"
         showNavInfo={false}
+        d3VelocityDecay={0.3}
         nodeThreeObject={nodeThreeObject}
-        onNodeClick={(node) => onSelectNode((node as CelestialNode).id)}
+        onNodeClick={(node) => onSelectNode((node as D3Node).id as string)}
         linkVisibility={(link) => {
           const l = link as CelestialLink
-          const sId = typeof l.source === "string" ? l.source : l.source.id
-          const tId = typeof l.target === "string" ? l.target : l.target.id
+          const sId = typeof l.source === "object" ? l.source.id : l.source
+          const tId = typeof l.target === "object" ? l.target.id : l.target
           
           if (selectedId) return sId === selectedId || tId === selectedId
           
-          // Show only backbone links when nothing is selected
           const s = nodes.find(n => n.id === sId)
           const t = nodes.find(n => n.id === tId)
-          return (s?.celestialType === 'supergiant' || s?.celestialType.includes('giant')) && 
-                 (t?.celestialType === 'supergiant' || t?.celestialType.includes('giant'))
+          return !!((s?.celestialType === 'supergiant' || s?.celestialType?.includes('giant')) && 
+                 (t?.celestialType === 'supergiant' || t?.celestialType?.includes('giant')))
         }}
         linkColor={(link) => getLinkColor(link as CelestialLink)}
         linkWidth={(link) => {
           const l = link as CelestialLink
-          const sId = typeof l.source === "string" ? l.source : l.source.id
-          const tId = typeof l.target === "string" ? l.target : l.target.id
+          const sId = typeof l.source === "object" ? l.source.id : l.source
+          const tId = typeof l.target === "object" ? l.target.id : l.target
           return (selectedId && (sId === selectedId || tId === selectedId)) ? 2.5 : 0.8
         }}
         linkDirectionalParticles={(link) => {
           const l = link as CelestialLink
-          const sId = typeof l.source === "string" ? l.source : l.source.id
-          const tId = typeof l.target === "string" ? l.target : l.target.id
+          const sId = typeof l.source === "object" ? l.source.id : l.source
+          const tId = typeof l.target === "object" ? l.target.id : l.target
           return (selectedId && (sId === selectedId || tId === selectedId)) ? 6 : 0
         }}
         linkDirectionalParticleWidth={2.5}
